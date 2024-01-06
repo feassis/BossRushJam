@@ -18,6 +18,7 @@ public class PlayerControler : MonoBehaviour
     private PlayerMechaControls mechaControls;
     private InputAction moveAction;
     private InputAction dashAction;
+    private InputAction leftWeaponAction;
 
     private void Awake()
     {
@@ -32,6 +33,21 @@ public class PlayerControler : MonoBehaviour
         dashAction = mechaControls.FindAction("Dash");
 
         dashAction.performed += OnDashAction;
+
+        leftWeaponAction = mechaControls.FindAction("LeftWeapon");
+
+        leftWeaponAction.performed += OnLeftWeaponPerformed;
+        leftWeaponAction.canceled += OnLeftWeaponCanceled;
+    }
+
+    private void OnLeftWeaponCanceled(InputAction.CallbackContext context)
+    {
+        leftArm.OnAttackReleased();
+    }
+
+    private void OnLeftWeaponPerformed(InputAction.CallbackContext context)
+    {
+        leftArm.OnAttackPressed();
     }
 
     private void OnDashAction(InputAction.CallbackContext context)
@@ -62,6 +78,10 @@ public class PlayerControler : MonoBehaviour
     {
         leg = assembler.LegPart;
         leg.Setup(rb);
+
+        leftArm = assembler.LeftArmPart;
+
+
         CameraControler.Instance.GoToFollowPlayerMode(gameObject);
     }
 

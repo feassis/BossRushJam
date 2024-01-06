@@ -84,6 +84,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &783312288834985216
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6250147214455557547}
+  m_Layer: 0
+  m_Name: ProjectileSpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6250147214455557547
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 783312288834985216}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: -0.027, y: 1.326, z: -0.237}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7967159253820839078}
+  m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!1 &946764790329450116
 GameObject:
   m_ObjectHideFlags: 0
@@ -199,6 +230,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2827148156842937596}
+  - {fileID: 6250147214455557547}
   m_Father: {fileID: 8887263883122318759}
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
 --- !u!33 &5487775349435690080
@@ -797,7 +829,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1336960006150822898}
-  - component: {fileID: 2971411840224366607}
+  - component: {fileID: 77793273993718283}
   m_Layer: 0
   m_Name: BasicWeaponArm1
   m_TagString: Untagged
@@ -821,7 +853,7 @@ Transform:
   - {fileID: 5088917119079720796}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2971411840224366607
+--- !u!114 &77793273993718283
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -830,9 +862,16 @@ MonoBehaviour:
   m_GameObject: {fileID: 8100316004598148510}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b2bb6be74e846304b922758752c8976c, type: 3}
+  m_Script: {fileID: 11500000, guid: 9778d134e9f7a2342b53f4b478ba57a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  projectileSpawnPos: {fileID: 6250147214455557547}
+  fireRate: 3
+  damagePerBullet: 1
+  bulletSpeed: 20
+  bulletPrefab: {fileID: 8716573156184948710, guid: 2512efdfd87f37c41807b59b52ab75de,
+    type: 3}
+  bulletSpreadVariance: {x: 0.15, y: 0, z: 0.15}
 --- !u!1 &8839771465877647319
 GameObject:
   m_ObjectHideFlags: 0
