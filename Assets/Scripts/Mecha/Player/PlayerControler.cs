@@ -19,6 +19,7 @@ public class PlayerControler : MonoBehaviour
     private InputAction moveAction;
     private InputAction dashAction;
     private InputAction leftWeaponAction;
+    private InputAction rightWeaponAction;
 
     private void Awake()
     {
@@ -38,6 +39,22 @@ public class PlayerControler : MonoBehaviour
 
         leftWeaponAction.performed += OnLeftWeaponPerformed;
         leftWeaponAction.canceled += OnLeftWeaponCanceled;
+
+        rightWeaponAction = mechaControls.FindAction("RightWeapon");
+
+        rightWeaponAction.performed += OnRightWeaponPerformed;
+        rightWeaponAction.canceled += OnRightWeaponCanceled;
+
+    }
+
+    private void OnRightWeaponCanceled(InputAction.CallbackContext context)
+    {
+        rightArm.OnAttackReleased();
+    }
+
+    private void OnRightWeaponPerformed(InputAction.CallbackContext context)
+    {
+        rightArm.OnAttackPressed();
     }
 
     private void OnLeftWeaponCanceled(InputAction.CallbackContext context)
@@ -80,6 +97,7 @@ public class PlayerControler : MonoBehaviour
         leg.Setup(rb);
 
         leftArm = assembler.LeftArmPart;
+        rightArm = assembler.RightArmPart;
 
 
         CameraControler.Instance.GoToFollowPlayerMode(gameObject);
