@@ -91,7 +91,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   assembler: {fileID: 8127435084766899153}
-  rigidbody: {fileID: 8156532911617399888}
+  rb: {fileID: 8156532911617399888}
 --- !u!114 &8127435084766899153 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2707295311374054959, guid: d84ec3d7a403fd84fb2692e1a34f7a89,
