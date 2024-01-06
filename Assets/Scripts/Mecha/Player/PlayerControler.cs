@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 public class PlayerControler : MonoBehaviour
 {
     [SerializeField] private MechaAssembler assembler;
-    [SerializeField] private Rigidbody rigidbody;
+    [SerializeField] private Rigidbody rb;
 
     private MechaLegPart leg;
     private MechaArmPart leftArm;
@@ -61,7 +61,7 @@ public class PlayerControler : MonoBehaviour
     void Start()
     {
         leg = assembler.LegPart;
-        leg.Setup(rigidbody);
+        leg.Setup(rb);
         CameraControler.Instance.GoToFollowPlayerMode(gameObject);
     }
 
