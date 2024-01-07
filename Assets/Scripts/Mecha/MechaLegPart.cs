@@ -25,14 +25,18 @@ public class MechaLegPart : MechaPart
             return;
         }
 
-        isDashing = true;
 
-        dashDirection = direction;
-
-        if(dashDirection == Vector3.zero)
+        SpendManaAndAct(() =>
         {
-            dashDirection = new Vector3(0,0,1);
-        }
+            isDashing = true;
+
+            dashDirection = direction;
+
+            if (dashDirection == Vector3.zero)
+            {
+                dashDirection = new Vector3(0, 0, 1);
+            }
+        });
     }
 
     private void Update()

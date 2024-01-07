@@ -467,6 +467,7 @@ MonoBehaviour:
     Amount: 100
   - Type: 4
     Amount: 100
+  abilityManaCost: 20
   atkUsage: 1
   intUsage: 1
   projectileSpawnPos: {fileID: 2009302383440562420}

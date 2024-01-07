@@ -129,10 +129,4 @@ public class PlayerControler : MonoBehaviour
 
         CameraControler.Instance.GoToFollowPlayerMode(gameObject);
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }

@@ -19,8 +19,11 @@ public class MechaBodyPart : MechaPart
 
     public void OnDefensePerformed()
     {
-        var shieldInst = Instantiate(shield);
-        shieldInst.transform.position = parent.transform.position;
+        SpendManaAndAct(() =>
+        {
+            var shieldInst = Instantiate(shield);
+            shieldInst.transform.position = parent.transform.position;
+        });
     }
 
     public void OnDefenseCanceled()
