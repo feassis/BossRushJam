@@ -2,24 +2,16 @@
 using System.Threading;
 using UnityEngine;
 
-public class MechaLegPart : MonoBehaviour
+public class MechaLegPart : MechaPart
 {
-    [SerializeField] private float speed = 10;
-    [SerializeField] private float dashSpeed = 50;
+    [SerializeField] private float dashSpeedMultiplier = 3;
     [SerializeField] private float dashDuration;
-
-    private Rigidbody parent;
 
     private Vector3 direction;
     private Vector3 dashDirection;
     private float dashTimer;
 
     private bool isDashing;
-    
-    public void Setup(Rigidbody parent)
-    {
-        this.parent = parent;
-    }
 
     public void OnMoveAction(Vector3 direction)
     {
@@ -45,6 +37,11 @@ public class MechaLegPart : MonoBehaviour
 
     private void Update()
     {
+        if(mechaStats == null)
+        {
+            return;
+        }
+
         if(isDashing) 
         {
             Dash();
@@ -67,11 +64,25 @@ public class MechaLegPart : MonoBehaviour
             return;
         }
 
-        parent.velocity = dashDirection.normalized * dashSpeed + new Vector3(0, parent.velocity.y, 0);
+        var speedStat = mechaStats.GetStat(Stat.SPD);
+
+        if (speedStat == null)
+        {
+            return;
+        }
+
+        parent.velocity = dashDirection.normalized * mechaStats.GetStat(Stat.SPD).Amount * dashSpeedMultiplier + new Vector3(0, parent.velocity.y, 0);
     }
 
     private void Move()
     {
-        parent.velocity = direction.normalized * speed + new Vector3(0, parent.velocity.y, 0);
+        var speedStat = mechaStats.GetStat(Stat.SPD);
+
+        if (speedStat == null)
+        {
+            return;
+        }
+
+        parent.velocity = direction.normalized * mechaStats.GetStat(Stat.SPD).Amount + new Vector3(0, parent.velocity.y, 0);
     }
 }

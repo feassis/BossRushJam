@@ -2,16 +2,22 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PlayerHealth : MonoBehaviour, IDamageable
+public class Health : MonoBehaviour, IDamageable
 {
-    [Header("Health Values")]
-    [Tooltip("Sets The Maximum Health Of The Player")] public float maxHealth;
+    private float maxHealth;
     private float currentHealth; //Current Health That The Player Has
 
     void Start()
     {
         //Grab Reference To Our Torso Defensive Stat
     }
+
+    public void Setup(float hp)
+    {
+        maxHealth = hp;
+        currentHealth = maxHealth;
+    }
+
 
     public void TakeDamage(float damageTaken) //Function Called As Declared By IDamageable Interface
     {
