@@ -9,6 +9,7 @@ public class PlayerControler : MonoBehaviour
 {
     [SerializeField] private MechaAssembler assembler;
     [SerializeField] private Rigidbody rb;
+    [SerializeField] private MechaStats stat;
 
     private MechaLegPart leg;
     private MechaArmPart leftArm;
@@ -20,6 +21,7 @@ public class PlayerControler : MonoBehaviour
     private InputAction dashAction;
     private InputAction leftWeaponAction;
     private InputAction rightWeaponAction;
+    private InputAction defenseAction;
 
     private void Awake()
     {
@@ -45,6 +47,19 @@ public class PlayerControler : MonoBehaviour
         rightWeaponAction.performed += OnRightWeaponPerformed;
         rightWeaponAction.canceled += OnRightWeaponCanceled;
 
+        defenseAction = mechaControls.FindAction("DefenseAbility");
+        defenseAction.performed += OnDefensePerformed;
+        defenseAction.canceled += OnDefenseCanceled;    
+    }
+
+    private void OnDefenseCanceled(InputAction.CallbackContext context)
+    {
+        body.OnDefenseCanceled();
+    }
+
+    private void OnDefensePerformed(InputAction.CallbackContext context)
+    {
+        body.OnDefensePerformed();
     }
 
     private void OnRightWeaponCanceled(InputAction.CallbackContext context)
@@ -93,12 +108,24 @@ public class PlayerControler : MonoBehaviour
 
     void Start()
     {
-        leg = assembler.LegPart;
-        leg.Setup(rb);
+        List<AvailableStat> statList = new List<AvailableStat>();
 
+        leg = assembler.LegPart;
         leftArm = assembler.LeftArmPart;
         rightArm = assembler.RightArmPart;
+        body = assembler.BodyPart;
 
+        leg.Setup(rb, stat);
+        leftArm.Setup(rb, stat);
+        rightArm.Setup(rb, stat);
+        body.Setup(rb, stat);
+
+        statList.AddRange(leg.GetPartStatus());
+        statList.AddRange(leftArm.GetPartStatus());
+        statList.AddRange(rightArm.GetPartStatus());
+        statList.AddRange(body.GetPartStatus());
+
+        stat.Setup(statList);
 
         CameraControler.Instance.GoToFollowPlayerMode(gameObject);
     }

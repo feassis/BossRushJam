@@ -132,9 +132,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cdfdbea3c42d9d4a8a9372eab388cc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  statList:
+  - Type: 0
+    Amount: 500
+  - Type: 1
+    Amount: 150
+  - Type: 7
+    Amount: 5
+  - Type: 3
+    Amount: 20
+  - Type: 5
+    Amount: 20
   leftArmSocket: {fileID: 5665340863113877572}
   rightArmSocket: {fileID: 7577123867488189894}
   legSocket: {fileID: 5478314185854016737}
+  rotationSpeed: 180
+  shield: {fileID: 9222193547673465915, guid: 67845856e0a02984aaf3540fd0f646ec, type: 3}
 --- !u!136 &1679813444236517072
 CapsuleCollider:
   m_ObjectHideFlags: 0

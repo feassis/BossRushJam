@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 2107456682628296615}
   - component: {fileID: 2707295311374054959}
   - component: {fileID: 2623802995068420526}
+  - component: {fileID: 8900709573809942685}
+  - component: {fileID: 3514417602582544535}
+  - component: {fileID: 3714264369649827887}
   m_Layer: 0
   m_Name: BasicMecha
   m_TagString: Untagged
@@ -80,3 +83,42 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 1
+--- !u!114 &8900709573809942685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5371059473363071945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c199bd77b11cc714b97076a55f857fbd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: {fileID: 3514417602582544535}
+  mana: {fileID: 3714264369649827887}
+  stats: []
+--- !u!114 &3514417602582544535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5371059473363071945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2fa584ea97fb9414482dc0d08782337b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &3714264369649827887
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5371059473363071945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3525111eb8c6b484e993152be108147d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using static UnityEngine.GraphicsBuffer;
 
-public class MechaBodyPart : MonoBehaviour
+public class MechaBodyPart : MechaPart
 {
     [SerializeField] private Transform leftArmSocket;
     [SerializeField] private Transform rightArmSocket;
@@ -9,11 +9,24 @@ public class MechaBodyPart : MonoBehaviour
 
     [SerializeField] private float rotationSpeed = 180f;
 
+    [SerializeField] private GameObject shield;
+
     public Transform GetLeftArmSocket() => leftArmSocket;
 
     public Transform GetRightArmSocket() => rightArmSocket;
 
     public Transform GetLegSocket() => legSocket;
+
+    public void OnDefensePerformed()
+    {
+        var shieldInst = Instantiate(shield);
+        shieldInst.transform.position = parent.transform.position;
+    }
+
+    public void OnDefenseCanceled()
+    {
+        
+    }
 
 
     private void Update()
