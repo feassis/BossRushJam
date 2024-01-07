@@ -17,6 +17,9 @@ public class MechaStats : MonoBehaviour
 
         return stats.Find(s => s.Type == stat);
     } 
+
+    public float GetCurrentMana() => mana.GetCurrentMana();
+    public void SpendMana(float amount) => mana.SpendMana(amount);
     
     public void Setup(List<AvailableStat> stats)
     {
@@ -37,5 +40,6 @@ public class MechaStats : MonoBehaviour
         }
 
         health.Setup(GetStat(Stat.HP).Amount);
+        mana.Setup(GetStat(Stat.MP).Amount, GetStat(Stat.MPRES).Amount);
     }
 }

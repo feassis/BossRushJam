@@ -36,16 +36,20 @@ public class MechaArmSimpleProjectile: MechaArmPart
 
         shootTimer -= Time.deltaTime;
 
-        if(shootTimer < 0)
+        if (shootTimer < 0)
         {
-            var bullet = Instantiate(bulletPrefab);
-            bullet.transform.position = projectileSpawnPos.position;
-            bullet.transform.rotation = projectileSpawnPos.rotation;
+            SpendManaAndAct(() =>
+            {
+                var bullet = Instantiate(bulletPrefab);
+                bullet.transform.position = projectileSpawnPos.position;
+                bullet.transform.rotation = projectileSpawnPos.rotation;
 
-            bullet.Setup(damagePerBullet, bulletSpeed, GetShootDirection());
+                bullet.Setup(damagePerBullet, bulletSpeed, GetShootDirection());
 
-            shootTimer = GetCooldown();
-        }
+                shootTimer = GetCooldown();
+            });
+            
+        }  
     }
 
     private Vector3 GetShootDirection()

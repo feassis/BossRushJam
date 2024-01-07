@@ -40,14 +40,17 @@ public class MechaArmSimpleArcShort : MechaArmPart
             return;
         }
 
-        shootTimer = GetCooldown();
-        var target = MouseWorld.GetMousePosition();
+        SpendManaAndAct(() =>
+        {
+            shootTimer = GetCooldown();
+            var target = MouseWorld.GetMousePosition();
 
-        Vector3 initialVelocity = (target - projectileSpawnPos.position - (Physics.gravity * timeToHitTarget * timeToHitTarget) / 2) / timeToHitTarget;
+            Vector3 initialVelocity = (target - projectileSpawnPos.position - (Physics.gravity * timeToHitTarget * timeToHitTarget) / 2) / timeToHitTarget;
 
-        var bullet = Instantiate(bulletPrefab);
-        bullet.transform.position = projectileSpawnPos.position;
-        bullet.transform.rotation = projectileSpawnPos.rotation;
-        bullet.Setup(damage, initialVelocity);
+            var bullet = Instantiate(bulletPrefab);
+            bullet.transform.position = projectileSpawnPos.position;
+            bullet.transform.rotation = projectileSpawnPos.rotation;
+            bullet.Setup(damage, initialVelocity);
+        });
     }
 }
