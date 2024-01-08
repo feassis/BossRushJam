@@ -4,8 +4,18 @@ using UnityEngine;
 
 public class Health : MonoBehaviour, IDamageable
 {
-    private float maxHealth;
+    private float maxHealth; //Maximum Health That The Player Has
     private float currentHealth; //Current Health That The Player Has
+    private float iDuration; //Duration In Which The Player Is Invincible
+
+    public enum HealthState //Current Health State Of The Player
+    {
+        Undamaged,
+        Damaged,
+        Death
+    }
+
+    public HealthState currentHealthState; //Current State Of Player Health
 
     void Start()
     {
@@ -21,7 +31,17 @@ public class Health : MonoBehaviour, IDamageable
 
     public void TakeDamage(float damageTaken) //Function Called As Declared By IDamageable Interface
     {
-        currentHealth = CalculateDamage(damageTaken);
+        if(currentHealthState == HealthState.Undamaged)
+        {
+            currentHealth = CalculateDamage(damageTaken);
+            if(currentHealth > 0)
+            {
+                ChangeHealthState(HealthState.Damaged);
+            } else if(currentHealth <= 0)
+            {
+                ChangeHealthState(HealthState.Death);
+            }
+        } 
     }
 
     public void Heal(float healAmount) //Function Called Upon Player Heal
@@ -62,5 +82,44 @@ public class Health : MonoBehaviour, IDamageable
         }
 
         return healthAfterHeal;
+    }
+
+    private IEnumerator Invincible() //Gets Called Once Player Is Damaged 
+    {
+        //Ability To Not Be Damaged Already In Affect Due To State Not Matching
+        yield return new WaitForSeconds(iDuration);
+        ChangeHealthState(HealthState.Undamaged); //Invinciblity Is Over Therefore The Player Is Vulnerable
+    }
+
+    private void ChangeHealthState(HealthState newState)
+    {
+        if(currentHealthState != newState)
+        {
+            currentHealthState = newState;
+
+            HandleHealthState(newState);
+        }
+    }
+
+    private void HandleHealthState(HealthState healthState)
+    {
+        switch(healthState)
+        {
+            case HealthState.Undamaged:
+            //Enter Logic
+            break;
+
+            case HealthState.Damaged:
+            StartCoroutine("Invincible"); //Triggers Our IFrames
+            break; 
+
+            case HealthState.Death:
+            Death(); //Triggers Death
+            break;
+
+            default:
+            Debug.LogError("HealthState Does Not Exist"); //Logs A Warning
+            break;
+        }
     }
 }
