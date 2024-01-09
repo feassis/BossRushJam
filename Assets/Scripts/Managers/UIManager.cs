@@ -5,11 +5,12 @@ using UnityEngine;
 public class UIManager : MonoBehaviour
 {
     private GameObject pauseMenu; //Holds Our Main Menu Object
-    private GameObject gameOverMenu;
+    private GameObject gameOverMenu; //Holds Our Game Over Screen
 
     void Start()
     {
-        GameManager.OnUIToggled += TogglePauseMenu;
+        GameManager.OnGamePlay += TogglePauseMenuOff;
+        GameManager.OnGamePaused += TogglePauseMenuOn;
     }
 
     void Update()
@@ -17,15 +18,14 @@ public class UIManager : MonoBehaviour
         
     }
 
-    public void TogglePauseMenu(GameState newState) //Responsible For Toggling The Pause Menu
+    public void TogglePauseMenuOff() //Responsible For Toggling The Pause Menu
     {
-        if(newState == GameState.Paused)
-        {
-            //Toggle On
-        } else if (newState == GameState.Playing)
-        {
-            //Toggle Off
-        }
+        pauseMenu.SetActive(false);
+    }
+
+    public void TogglePauseMenuOn()
+    {
+        pauseMenu.SetActive(true);
     }
 
     public void GameOver()

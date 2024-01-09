@@ -5,8 +5,10 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     /* Game State Change Events */
-    public delegate void UIToggleHandler(GameState newState); // UI Toggle Delegate
-    public static event UIToggleHandler OnUIToggled; // UI Toggle Event
+    public delegate void GameStateHandler(); //Game State Event
+    public static event GameStateHandler OnGamePaused; //Event For Pause
+    public static event GameStateHandler OnGamePlay; //Event For Play
+    public static event GameStateHandler OnGameOver; //Event For Game Over
 
     private GameState currentGameState;
 
@@ -40,7 +42,7 @@ public class GameManager : MonoBehaviour
         {
             currentGameState = newState; //Changes Current Game State
 
-            GameStateEvents(currentGameState);
+            GameStateEvents(currentGameState); //Calls GameStateEvents function to run events based on current state
         }
     }
 
@@ -54,17 +56,18 @@ public class GameManager : MonoBehaviour
         switch(currentGameState)
         {
             case GameState.Playing:
-            AdjustTimeScale(currentGameState);
-            OnUIToggled?.Invoke(currentGameState);
+            AdjustTimeScale(currentGameState); //Adjust Game Time Flow
+            OnGamePlay?.Invoke();
             break;
 
             case GameState.Paused:
-            AdjustTimeScale(currentGameState);
-            OnUIToggled?.Invoke(currentGameState);
+            AdjustTimeScale(currentGameState); //Adjust Game Time Flow            
+            OnGamePaused?.Invoke();
             break;
 
             case GameState.GameOver:
-            AdjustTimeScale(currentGameState);
+            AdjustTimeScale(currentGameState); //Adjust Game Time Flow
+            OnGameOver?.Invoke();
             break;
 
             default:
