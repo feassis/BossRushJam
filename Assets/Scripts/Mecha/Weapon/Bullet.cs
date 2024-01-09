@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    private float dmg;
+    protected float dmg;
     private float speed;
     private Vector3 movementDirection = Vector3.zero;
 
@@ -32,7 +32,13 @@ public class Bullet : MonoBehaviour
         TryGetComponent<IDamageable>(out IDamageable damageable);
         if (damageable != null)
         {
-            damageable.TakeDamage(dmg);
+            ApplyBulletDamage(damageable);
+            Destroy(gameObject);
         }
+    }
+
+    protected virtual void ApplyBulletDamage(IDamageable damageable)
+    {
+        damageable.TakeDamage(dmg);
     }
 }
