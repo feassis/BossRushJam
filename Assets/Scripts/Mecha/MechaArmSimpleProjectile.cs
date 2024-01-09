@@ -44,7 +44,7 @@ public class MechaArmSimpleProjectile: MechaArmPart
                 bullet.transform.position = projectileSpawnPos.position;
                 bullet.transform.rotation = projectileSpawnPos.rotation;
 
-                bullet.Setup(damagePerBullet, bulletSpeed, GetShootDirection());
+                bullet.Setup(damagePerBullet, bulletSpeed, GetShootDirection(), parent.gameObject);
 
                 shootTimer = GetCooldown();
             });
