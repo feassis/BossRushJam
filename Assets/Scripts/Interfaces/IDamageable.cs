@@ -4,8 +4,7 @@ using UnityEngine;
 
 public interface IDamageable
 {
-    public void TakeDamage(float dmg)
-    {
-        
-    }
+    public void TakeDamage(float dmg);
+
+    public void TakeDamageOverTime(float dmg, float duration, int numberOfTick);
 }

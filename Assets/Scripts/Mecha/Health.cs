@@ -24,6 +24,22 @@ public class Health : MonoBehaviour, IDamageable
         currentHealth = CalculateDamage(damageTaken);
     }
 
+    public void TakeDamageOverTime(float dmg, float duration, int numberOfTicks)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    private IEnumerator DamageOverTimeRoutine(float dmg, float duration, int numberOfTicks) 
+    {
+        float ticks = 0;
+        while(ticks < numberOfTicks)
+        {
+            yield return new WaitForSeconds(duration / numberOfTicks);
+            TakeDamage(dmg / numberOfTicks);
+            ticks++;
+        }
+    }
+
     public void Heal(float healAmount) //Function Called Upon Player Heal
     {
         currentHealth = CaluclateHeal(healAmount);
@@ -63,4 +79,6 @@ public class Health : MonoBehaviour, IDamageable
 
         return healthAfterHeal;
     }
+
+    
 }

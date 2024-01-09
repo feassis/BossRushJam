@@ -480,6 +480,12 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 77793273993718283, guid: d2d4cf5cbc62569469717402b16316fe,
         type: 3}
+    - target: {fileID: 8127435084766899153, guid: 44d922d516f0cba489de509890784e30,
+        type: 3}
+      propertyPath: rightArmPrefab
+      value: 
+      objectReference: {fileID: 77793273993718283, guid: 8e261f5bf6bd4b04ea90cf3e8e6c13e7,
+        type: 3}
     - target: {fileID: 8156532911617399888, guid: 44d922d516f0cba489de509890784e30,
         type: 3}
       propertyPath: m_Mass
