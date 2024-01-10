@@ -7,18 +7,18 @@ public class MechaLegPart : MechaPart
     [SerializeField] private float dashSpeedMultiplier = 3;
     [SerializeField] private float dashDuration;
 
-    private Vector3 direction;
+    protected Vector3 direction;
     private Vector3 dashDirection;
     private float dashTimer;
 
     private bool isDashing;
 
-    public void OnMoveAction(Vector3 direction)
+    public virtual void OnMoveAction(Vector3 direction)
     {
         this.direction = direction;
     }
 
-    public void OnDashAction()
+    public virtual void OnDashAction()
     {
         if(isDashing)
         {
@@ -39,7 +39,7 @@ public class MechaLegPart : MechaPart
         });
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         if(mechaStats == null)
         {
@@ -57,7 +57,7 @@ public class MechaLegPart : MechaPart
         
     }
 
-    private void Dash()
+    protected void Dash()
     {
         dashTimer += Time.deltaTime;
 
@@ -73,7 +73,7 @@ public class MechaLegPart : MechaPart
         parent.velocity = dashDirection.normalized * speedStat * dashSpeedMultiplier + new Vector3(0, parent.velocity.y, 0);
     }
 
-    private void Move()
+    protected virtual void Move()
     {
         var speedStat = mechaStats.GetStatValue(Stat.SPD);
 

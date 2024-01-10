@@ -20,6 +20,8 @@ public class Health : MonoBehaviour, IDamageable
         mechaStat = stats;
     }
 
+    public float GetMaxHealth() => maxHealth;
+    public float GetCurrentHealth() => currentHealth;
 
     public void TakeDamage(float damageTaken) //Function Called As Declared By IDamageable Interface
     {
