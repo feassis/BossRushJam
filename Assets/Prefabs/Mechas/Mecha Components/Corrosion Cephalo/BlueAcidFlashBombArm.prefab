@@ -428,7 +428,7 @@ GameObject:
   - component: {fileID: 5257807292609443787}
   - component: {fileID: 9064934300366188529}
   m_Layer: 0
-  m_Name: BlueAcidFlashBomb
+  m_Name: BlueAcidFlashBombArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

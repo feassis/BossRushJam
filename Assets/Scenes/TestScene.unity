@@ -476,6 +476,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8127435084766899153, guid: 44d922d516f0cba489de509890784e30,
         type: 3}
+      propertyPath: bodyPrefab
+      value: 
+      objectReference: {fileID: 518577978393160815, guid: cf4a2d221e86d674ebe0fbc20153bdea,
+        type: 3}
+    - target: {fileID: 8127435084766899153, guid: 44d922d516f0cba489de509890784e30,
+        type: 3}
       propertyPath: leftArmPrefab
       value: 
       objectReference: {fileID: 77793273993718283, guid: d2d4cf5cbc62569469717402b16316fe,

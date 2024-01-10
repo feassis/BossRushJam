@@ -9,30 +9,24 @@ public class MechaBodyPart : MechaPart
 
     [SerializeField] private float rotationSpeed = 180f;
 
-    [SerializeField] private GameObject shield;
-
     public Transform GetLeftArmSocket() => leftArmSocket;
 
     public Transform GetRightArmSocket() => rightArmSocket;
 
     public Transform GetLegSocket() => legSocket;
 
-    public void OnDefensePerformed()
+    public virtual void OnDefensePerformed()
     {
-        SpendManaAndAct(() =>
-        {
-            var shieldInst = Instantiate(shield);
-            shieldInst.transform.position = parent.transform.position;
-        });
+      
     }
 
-    public void OnDefenseCanceled()
+    public virtual void OnDefenseCanceled()
     {
         
     }
 
 
-    private void Update()
+    protected virtual void Update()
     {
         var target = MouseWorld.GetMousePosition();
 
