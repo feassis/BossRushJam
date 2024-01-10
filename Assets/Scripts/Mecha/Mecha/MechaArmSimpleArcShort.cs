@@ -50,7 +50,7 @@ public class MechaArmSimpleArcShort : MechaArmPart
             var bullet = Instantiate(bulletPrefab);
             bullet.transform.position = projectileSpawnPos.position;
             bullet.transform.rotation = projectileSpawnPos.rotation;
-            bullet.Setup(damage, initialVelocity);
+            bullet.Setup(damage, initialVelocity, parent.gameObject);
         });
     }
 }

@@ -484,7 +484,7 @@ PrefabInstance:
         type: 3}
       propertyPath: rightArmPrefab
       value: 
-      objectReference: {fileID: 77793273993718283, guid: 8e261f5bf6bd4b04ea90cf3e8e6c13e7,
+      objectReference: {fileID: 9064934300366188529, guid: db6b653ff47b1744c922642e9abbf1b2,
         type: 3}
     - target: {fileID: 8156532911617399888, guid: 44d922d516f0cba489de509890784e30,
         type: 3}
@@ -515,7 +515,7 @@ GameObject:
   - component: {fileID: 1375344531}
   m_Layer: 6
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Floor
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
