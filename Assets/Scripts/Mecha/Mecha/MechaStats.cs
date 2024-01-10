@@ -24,6 +24,13 @@ public class MechaStats : MonoBehaviour
     {
         return effects.Contains(statusEffect);
     }
+
+    public Health GetHealth()
+    {
+        return health;
+    }
+
+
     public float GetStatValue(Stat stat)
     {
         if (stats.Count <= 0)
