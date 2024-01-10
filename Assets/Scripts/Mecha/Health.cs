@@ -6,27 +6,34 @@ public class Health : MonoBehaviour, IDamageable
 {
     private float maxHealth;
     private float currentHealth; //Current Health That The Player Has
+    private MechaStats mechaStat;
 
     void Start()
     {
         //Grab Reference To Our Torso Defensive Stat
     }
 
-    public void Setup(float hp)
+    public void Setup(float hp, MechaStats stats)
     {
         maxHealth = hp;
         currentHealth = maxHealth;
+        mechaStat = stats;
     }
 
 
     public void TakeDamage(float damageTaken) //Function Called As Declared By IDamageable Interface
     {
+        if (mechaStat.HasStatus(StatusEffect.Invulnerable))
+        {
+            return;
+        }
+
         currentHealth = CalculateDamage(damageTaken);
     }
 
     public void TakeDamageOverTime(float dmg, float duration, int numberOfTicks)
     {
-        throw new System.NotImplementedException();
+        StartCoroutine(DamageOverTimeRoutine(dmg, duration, numberOfTicks));
     }
 
     private IEnumerator DamageOverTimeRoutine(float dmg, float duration, int numberOfTicks) 

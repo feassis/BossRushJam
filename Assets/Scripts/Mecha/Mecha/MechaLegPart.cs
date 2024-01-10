@@ -68,25 +68,15 @@ public class MechaLegPart : MechaPart
             return;
         }
 
-        var speedStat = mechaStats.GetStat(Stat.SPD);
+        var speedStat = mechaStats.GetStatValue(Stat.SPD);
 
-        if (speedStat == null)
-        {
-            return;
-        }
-
-        parent.velocity = dashDirection.normalized * mechaStats.GetStat(Stat.SPD).Amount * dashSpeedMultiplier + new Vector3(0, parent.velocity.y, 0);
+        parent.velocity = dashDirection.normalized * speedStat * dashSpeedMultiplier + new Vector3(0, parent.velocity.y, 0);
     }
 
     private void Move()
     {
-        var speedStat = mechaStats.GetStat(Stat.SPD);
+        var speedStat = mechaStats.GetStatValue(Stat.SPD);
 
-        if (speedStat == null)
-        {
-            return;
-        }
-
-        parent.velocity = direction.normalized * mechaStats.GetStat(Stat.SPD).Amount + new Vector3(0, parent.velocity.y, 0);
+        parent.velocity = direction.normalized * speedStat + new Vector3(0, parent.velocity.y, 0);
     }
 }
