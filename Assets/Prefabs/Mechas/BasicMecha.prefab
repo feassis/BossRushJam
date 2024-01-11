@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2107456682628296615}
-  - component: {fileID: 2707295311374054959}
   - component: {fileID: 2623802995068420526}
+  - component: {fileID: 2707295311374054959}
   - component: {fileID: 8900709573809942685}
   - component: {fileID: 3514417602582544535}
   - component: {fileID: 3714264369649827887}
@@ -36,26 +36,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2707295311374054959
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5371059473363071945}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a4132797e80df4348ab3bfb4257bd789, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bodyPrefab: {fileID: 5363847330648358502, guid: 677e01cd96915d749b8154e72ec19bfd,
-    type: 3}
-  leftArmPrefab: {fileID: 2971411840224366607, guid: 8bff4b7da05891343b786d68b6ce9bba,
-    type: 3}
-  rightArmPrefab: {fileID: 7012922686930050585, guid: 9cc0ab25a3ffd13478a587eaba6b8d36,
-    type: 3}
-  legPrefab: {fileID: 655629654750977751, guid: 60e5a117591fc4141a3c633af883e99d,
-    type: 3}
 --- !u!54 &2623802995068420526
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -83,6 +63,26 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 80
   m_CollisionDetection: 1
+--- !u!114 &2707295311374054959
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5371059473363071945}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4132797e80df4348ab3bfb4257bd789, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bodyPrefab: {fileID: 5363847330648358502, guid: 677e01cd96915d749b8154e72ec19bfd,
+    type: 3}
+  leftArmPrefab: {fileID: 2971411840224366607, guid: 8bff4b7da05891343b786d68b6ce9bba,
+    type: 3}
+  rightArmPrefab: {fileID: 7012922686930050585, guid: 9cc0ab25a3ffd13478a587eaba6b8d36,
+    type: 3}
+  legPrefab: {fileID: 655629654750977751, guid: 60e5a117591fc4141a3c633af883e99d,
+    type: 3}
 --- !u!114 &8900709573809942685
 MonoBehaviour:
   m_ObjectHideFlags: 0
