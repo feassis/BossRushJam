@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour
     private GameState currentGameState;
 
     private static GameManager instance;
+
+    private float currentTime;
     
     private void Awake()
     {
@@ -29,11 +31,6 @@ public class GameManager : MonoBehaviour
         {
             instance = null;
         }
-    }
-
-    private void Start()
-    {
-
     }
 
     public void ChangeGameState(GameState newState) //Responsible For Changing GameState
@@ -57,11 +54,13 @@ public class GameManager : MonoBehaviour
         {
             case GameState.Playing:
             AdjustTimeScale(currentGameState); //Adjust Game Time Flow
+            //Resume Game Time
             OnGamePlay?.Invoke();
             break;
 
             case GameState.Paused:
-            AdjustTimeScale(currentGameState); //Adjust Game Time Flow            
+            AdjustTimeScale(currentGameState); //Adjust Game Time Flow  
+            //Pause Game Time          
             OnGamePaused?.Invoke();
             break;
 
