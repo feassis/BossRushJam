@@ -4,17 +4,17 @@ using UnityEngine;
 
 public class MechaAssembler : MonoBehaviour
 {
-    [SerializeField] private MechaBodyPart bodyPrefab;
-    [SerializeField] private MechaArmPart leftArmPrefab;
-    [SerializeField] private MechaArmPart rightArmPrefab;
-    [SerializeField] private MechaLegPart legPrefab;
+    [SerializeField] protected MechaBodyPart bodyPrefab;
+    [SerializeField] protected MechaArmPart leftArmPrefab;
+    [SerializeField] protected MechaArmPart rightArmPrefab;
+    [SerializeField] protected MechaLegPart legPrefab;
 
-    private MechaBodyPart bodyPart;
-    private MechaArmPart leftArmPart;
-    private MechaArmPart rightArmPart;
-    private MechaLegPart legPart;
+    protected MechaBodyPart bodyPart;
+    protected MechaArmPart leftArmPart;
+    protected MechaArmPart rightArmPart;
+    protected MechaLegPart legPart;
 
-    private void Awake()
+    protected virtual void Awake()
     {
         bodyPart = Instantiate(bodyPrefab, transform);
         leftArmPart = Instantiate(leftArmPrefab, bodyPart.GetLeftArmSocket());

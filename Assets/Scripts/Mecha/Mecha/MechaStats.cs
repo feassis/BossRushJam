@@ -25,6 +25,8 @@ public class MechaStats : MonoBehaviour
         return effects.Contains(statusEffect);
     }
 
+    public List<AvailableStat> Stats { get { return stats; } }
+
     public Health GetHealth()
     {
         return health;
