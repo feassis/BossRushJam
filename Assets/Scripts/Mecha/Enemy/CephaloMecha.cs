@@ -15,13 +15,18 @@ public class CephaloMecha : EnemyMecha
     [Header("Attack Configuration")]
     [SerializeField] private float attackModeInterval = 10;
 
+    [Header("Defense Configuration")]
+    [SerializeField][Range(0, 1)] private float defensePercentage = 0.5f;
+    [SerializeField] private float defenseCooldown = 60f;
+
 
     private MechaArmPart middleArm;
     Vector3 movementTarget;
     private float attackRoutineTimer = 0;
     private int attackModeIndex = 0;
     private AttackMode attackMode;
-    private float pinkAcidTimer = 0;
+
+    private float defenseTimer = 0;
 
     private enum AttackMode
     {
@@ -102,9 +107,6 @@ public class CephaloMecha : EnemyMecha
             leftArm.OnAttackReleased();
         }
 
-
-
-
         switch (attackModeIndex % 3) 
         {
             case 0:
@@ -147,9 +149,27 @@ public class CephaloMecha : EnemyMecha
         }
 
         Attack();
+
+        Defense();
     }
 
-    
+    private void Defense()
+    {
+        var health = stat.GetHealth();
+        if (health.GetCurrentHealth() / health.GetMaxHealth() > defensePercentage)
+        {
+            return;
+        }
+
+        defenseTimer -= Time.deltaTime;
+
+        if(defenseTimer < 0)
+        {
+            defenseTimer = defenseCooldown;
+            body.OnDefensePerformed();
+        }
+    }
+
     private void Attack()
     {
         switch (attackMode)

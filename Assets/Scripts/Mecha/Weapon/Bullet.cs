@@ -16,6 +16,15 @@ public class Bullet : MonoBehaviour
         this.speed = speed;
         this.movementDirection = directon;
         this.owner = owner;
+
+        StartCoroutine(Lifetime());
+    }
+
+    private IEnumerator Lifetime()
+    {
+        yield return new WaitForSeconds(10);
+
+        Destroy(gameObject);
     }
 
     private void Update()
@@ -29,7 +38,7 @@ public class Bullet : MonoBehaviour
         {
             return;
         }
-        TryGetComponent<IDamageable>(out IDamageable damageable);
+        other.gameObject.TryGetComponent<IDamageable>(out IDamageable damageable);
         if (damageable != null)
         {
             ApplyBulletDamage(damageable);

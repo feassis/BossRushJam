@@ -95,6 +95,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 7811243802773723499}
+    - targetCorrespondingSourceObject: {fileID: 5371059473363071945, guid: d84ec3d7a403fd84fb2692e1a34f7a89,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 6893443678684183640}
   m_SourcePrefab: {fileID: 100100000, guid: d84ec3d7a403fd84fb2692e1a34f7a89, type: 3}
 --- !u!1 &2203528256349650019 stripped
 GameObject:
@@ -162,9 +166,6 @@ MonoBehaviour:
   assembler: {fileID: 4992167913324860863}
   rb: {fileID: 8103323217053355524}
   stat: {fileID: 3429767469450985271}
-  leftArmWeight: 10
-  rightArmWeight: 10
-  middleArmWeight: 10
   maxPlayerDistance: 20
   minPlayerDistance: 10
   movementCoroutineInterval: 0.5
@@ -172,6 +173,32 @@ MonoBehaviour:
   - 0
   - 0
   strafeAngle: 20
+  attackModeInterval: 10
+  defensePercentage: 0.5
+  defenseCooldown: 60
+--- !u!136 &6893443678684183640
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2203528256349650019}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1
+  m_Height: 3
+  m_Direction: 1
+  m_Center: {x: 0, y: 1.5, z: 0}
 --- !u!114 &3429767469450985271 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8900709573809942685, guid: d84ec3d7a403fd84fb2692e1a34f7a89,

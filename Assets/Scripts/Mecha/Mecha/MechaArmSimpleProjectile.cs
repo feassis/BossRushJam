@@ -4,7 +4,6 @@ public class MechaArmSimpleProjectile: MechaArmPart
 {
     [SerializeField] private Transform projectileSpawnPos;
     [SerializeField] private float fireRate = 3;
-    [SerializeField] private float damagePerBullet;
     [SerializeField] private float bulletSpeed = 20;
     [SerializeField] private Bullet bulletPrefab;
     [SerializeField] private Vector3 bulletSpreadVariance = new Vector3(0.1f, 0.1f, 0.1f);
@@ -44,6 +43,7 @@ public class MechaArmSimpleProjectile: MechaArmPart
                 bullet.transform.position = projectileSpawnPos.position;
                 bullet.transform.rotation = projectileSpawnPos.rotation;
 
+                var damagePerBullet = GetDamage();
                 bullet.Setup(damagePerBullet, bulletSpeed, GetShootDirection(), parent.gameObject);
 
                 shootTimer = GetCooldown();

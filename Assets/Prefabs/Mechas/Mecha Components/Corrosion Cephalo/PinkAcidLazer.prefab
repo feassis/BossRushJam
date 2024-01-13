@@ -867,12 +867,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statList:
   - Type: 2
-    Amount: 100
+    Amount: 150
   - Type: 4
-    Amount: 10
+    Amount: 50
   abilityManaCost: 1
-  atkUsage: 0.1
-  intUsage: 0.1
+  atkUsage: 0.5
+  intUsage: 0.5
   projectileSpawnPos: {fileID: 6250147214455557547}
   fireRate: 3
   damagePerBullet: 1
