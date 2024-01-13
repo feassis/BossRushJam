@@ -15,6 +15,8 @@ public class MechaBodyPart : MechaPart
 
     public Transform GetLegSocket() => legSocket;
 
+    private Vector3 target;
+
     public virtual void OnDefensePerformed()
     {
       
@@ -25,11 +27,13 @@ public class MechaBodyPart : MechaPart
         
     }
 
+    public virtual void SetLookUpTarget(Vector3 target)
+    {
+        this.target = target;
+    }
 
     protected virtual void Update()
     {
-        var target = MouseWorld.GetMousePosition();
-
         if (target != null)
         {
             // Calculate the direction to the target

@@ -14,9 +14,9 @@ public class MechaArmSimpleProjectile: MechaArmPart
     private bool isShooting = false;
     private float shootTimer;
 
-    public override void OnAttackPressed()
+    public override void OnAttackPressed(bool isplayerTarget = false)
     {
-        base.OnAttackPressed();
+        base.OnAttackPressed(isplayerTarget);
         isShooting = true;
     }
 
