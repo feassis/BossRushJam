@@ -8,10 +8,9 @@ public class BlueAcidFlashBomb : ArcBullet
     [SerializeField] private float duration;
     [SerializeField] private LayerMask obstacleMask;
 
-
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if(collision.gameObject.tag == "Floor" || collision.gameObject.tag == "Obstacle")
+        if (other.gameObject.tag == "Floor" || other.gameObject.tag == "Obstacle")
         {
             BlueAcidPuddle puddle = Instantiate(acidPuddlePrefab);
             Ray ray = new Ray(transform.position, Vector3.down);
@@ -25,4 +24,5 @@ public class BlueAcidFlashBomb : ArcBullet
             Destroy(gameObject);
         }
     }
+
 }
