@@ -18,7 +18,7 @@ public class AcidBubbleShield : MonoBehaviour, IDamageable
         Destroy(gameObject);
     }
 
-    public void TakeDamage(float dmg)
+    public void TakeDamage(float dmg, DamageType damgeType)
     {
         
     }

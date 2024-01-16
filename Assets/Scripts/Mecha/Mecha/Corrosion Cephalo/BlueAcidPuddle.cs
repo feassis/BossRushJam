@@ -8,6 +8,7 @@ public class BlueAcidPuddle : MonoBehaviour
     private float dmgPeriod= 0.1f;
     private float duration = 1;
     private GameObject owner;
+    private DamageType damageType;
 
     private float damageTimer = 0;
 
@@ -74,7 +75,7 @@ public class BlueAcidPuddle : MonoBehaviour
             {
                 if (damageble != null)
                 {
-                    damageble.TakeDamage(dmg);
+                    damageble.TakeDamage(dmg, DamageType.NONE);
                 }
             }
         }

@@ -7,6 +7,7 @@ public class Bullet : MonoBehaviour
     protected float dmg;
     private float speed;
     private Vector3 movementDirection = Vector3.zero;
+    private DamageType damageType;
 
     private GameObject owner;
 
@@ -39,6 +40,6 @@ public class Bullet : MonoBehaviour
 
     protected virtual void ApplyBulletDamage(IDamageable damageable)
     {
-        damageable.TakeDamage(dmg);
+        damageable.TakeDamage(dmg, DamageType.NONE);
     }
 }
