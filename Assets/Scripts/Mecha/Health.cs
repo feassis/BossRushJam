@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -7,6 +8,10 @@ public class Health : MonoBehaviour, IDamageable
     private float maxHealth;
     private float currentHealth; //Current Health That The Player Has
     private MechaStats mechaStat;
+
+    public event Action<float, float> OnDamageTaken;
+    public event Action<float, float> OnDamageHealed;
+    public event Action OnSetupEnded;
 
     void Start()
     {
@@ -18,6 +23,7 @@ public class Health : MonoBehaviour, IDamageable
         maxHealth = hp;
         currentHealth = maxHealth;
         mechaStat = stats;
+        OnSetupEnded?.Invoke();
     }
 
     public float GetMaxHealth() => maxHealth;
@@ -30,7 +36,8 @@ public class Health : MonoBehaviour, IDamageable
             return;
         }
 
-        currentHealth = CalculateDamage(damageTaken);
+        currentHealth = Mathf.Clamp(CalculateDamage(damageTaken), 0, maxHealth);
+        OnDamageTaken?.Invoke(GetCurrentHealth(), GetMaxHealth());
     }
 
     public void TakeDamageOverTime(float dmg, float duration, int numberOfTicks)
@@ -51,7 +58,8 @@ public class Health : MonoBehaviour, IDamageable
 
     public void Heal(float healAmount) //Function Called Upon Player Heal
     {
-        currentHealth = CaluclateHeal(healAmount);
+        currentHealth = Mathf.Clamp(CaluclateHeal(healAmount), 0, maxHealth);
+        OnDamageHealed?.Invoke(GetCurrentHealth(), GetMaxHealth());
     }
 
     private void Death() //Function Called Upon Player Health Reaching Zero
@@ -64,7 +72,7 @@ public class Health : MonoBehaviour, IDamageable
     {
         //Grab Our Defensive Value From Torso & See If We Reduced Damage This Turn
 
-        float reducedPercentage = Random.Range(0f, 100f); // Random Range Is Generated Between 0 And 100
+        float reducedPercentage = UnityEngine.Random.Range(0f, 100f); // Random Range Is Generated Between 0 And 100
         
         /*if(reducedPercentage <= "Insert Torso Defense Value Here")
         {
