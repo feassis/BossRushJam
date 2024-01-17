@@ -682,13 +682,13 @@ PrefabInstance:
         type: 3}
       propertyPath: leftArmPrefab
       value: 
-      objectReference: {fileID: 77793273993718283, guid: 8bff4b7da05891343b786d68b6ce9bba,
+      objectReference: {fileID: 77793273993718283, guid: 4d723e387a946d3458c643c7dd1d5086,
         type: 3}
     - target: {fileID: 8127435084766899153, guid: 44d922d516f0cba489de509890784e30,
         type: 3}
       propertyPath: rightArmPrefab
       value: 
-      objectReference: {fileID: 9064934300366188529, guid: db6b653ff47b1744c922642e9abbf1b2,
+      objectReference: {fileID: 77793273993718283, guid: 30b614f57b92fe84dace102406d06c84,
         type: 3}
     - target: {fileID: 8156532911617399888, guid: 44d922d516f0cba489de509890784e30,
         type: 3}
@@ -1439,6 +1439,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: CorrosionCephalo
+      objectReference: {fileID: 0}
+    - target: {fileID: 2203528256349650019, guid: 32762b29220cebc45814c0d2067c4a80,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3429767469450985271, guid: 32762b29220cebc45814c0d2067c4a80,
         type: 3}

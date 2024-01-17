@@ -831,7 +831,7 @@ GameObject:
   - component: {fileID: 1336960006150822898}
   - component: {fileID: 77793273993718283}
   m_Layer: 0
-  m_Name: BasicWeaponArm1
+  m_Name: RapidCasterArm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -868,15 +868,15 @@ MonoBehaviour:
   statList:
   - Type: 4
     Amount: 3
-  abilityManaCost: 1
-  atkUsage: 0.1
-  intUsage: 0.01
+  abilityManaCost: 10
+  atkUsage: 0
+  intUsage: 0.1
   projectileSpawnPos: {fileID: 6250147214455557547}
-  fireRate: 3
-  bulletSpeed: 20
+  fireRate: 0.9
+  bulletSpeed: 40
   bulletPrefab: {fileID: 8716573156184948710, guid: 2512efdfd87f37c41807b59b52ab75de,
     type: 3}
-  bulletSpreadVariance: {x: 0.15, y: 0, z: 0.15}
+  bulletSpreadVariance: {x: 0, y: 0, z: 0}
 --- !u!1 &8839771465877647319
 GameObject:
   m_ObjectHideFlags: 0
