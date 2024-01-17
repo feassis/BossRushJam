@@ -8,7 +8,7 @@ public class OverheatLegs : MechaLegPart
     [SerializeField] private float selfDamagePercentage = 0.05f;
     private bool isOverheated;
 
-    public override void OnDashAction()
+    public override void OnLegAction()
     {
         if (isOverheated)
         {

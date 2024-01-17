@@ -101,12 +101,28 @@ public class MechaStats : MonoBehaviour
 
         return stat switch
         {
-            Stat.SPD => HasStatus(StatusEffect.Rooted) ? 0 : GetStat(Stat.SPD).Amount,
+            Stat.SPD => GetSpeedStat(),
             Stat.DEF => HasStatus(StatusEffect.DefenseDown30) ? GetStat(Stat.DEF).Amount * (0.7f) : GetStat(Stat.DEF).Amount, 
             _ => GetStat(stat).Amount
         };
     }
 
+    private float GetSpeedStat()
+    {
+        float rawSpeedStatus = GetStat(Stat.SPD).Amount;
+
+        if (HasStatus(StatusEffect.Rooted))
+        {
+            return 0;
+        }
+
+        if (HasStatus(StatusEffect.SlowDown50))
+        {
+            return rawSpeedStatus * 0.5f;
+        }
+
+        return rawSpeedStatus;
+    }
 
     public AvailableStat GetStat(Stat stat) 
     {
@@ -151,5 +167,5 @@ public enum StatusEffect
     Invulnerable = 2,
     DefenseDown30 =3,
     DamageReduction50 = 4,
-
+    SlowDown50 = 5
 }

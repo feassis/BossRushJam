@@ -303,6 +303,7 @@ Transform:
   m_Children:
   - {fileID: 1996450976}
   - {fileID: 1529037737}
+  - {fileID: 514991257}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &508515334
@@ -429,6 +430,50 @@ Transform:
   - {fileID: 198947816}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &514991256
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 514991257}
+  - component: {fileID: 514991258}
+  m_Layer: 0
+  m_Name: Mecha Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &514991257
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514991256}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 300843247}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &514991258
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 514991256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae206d0aa293df84a9c03dec18483de3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &842739732
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -670,13 +715,13 @@ PrefabInstance:
         type: 3}
       propertyPath: legPrefab
       value: 
-      objectReference: {fileID: 5691867501568812715, guid: ac7310b5502eb06408794c2dea8b5b89,
+      objectReference: {fileID: 4195123127108275411, guid: aa39d85cdc076e1409711800b7134ab0,
         type: 3}
     - target: {fileID: 8127435084766899153, guid: 44d922d516f0cba489de509890784e30,
         type: 3}
       propertyPath: bodyPrefab
       value: 
-      objectReference: {fileID: 518577978393160815, guid: cf4a2d221e86d674ebe0fbc20153bdea,
+      objectReference: {fileID: 3741349642904719271, guid: dc301b476bf521d42af823294c287fad,
         type: 3}
     - target: {fileID: 8127435084766899153, guid: 44d922d516f0cba489de509890784e30,
         type: 3}

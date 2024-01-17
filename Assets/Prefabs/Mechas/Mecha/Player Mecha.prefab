@@ -971,6 +971,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2707295311374054959, guid: d84ec3d7a403fd84fb2692e1a34f7a89,
         type: 3}
+      propertyPath: legPrefab
+      value: 
+      objectReference: {fileID: 4195123127108275411, guid: aa39d85cdc076e1409711800b7134ab0,
+        type: 3}
+    - target: {fileID: 2707295311374054959, guid: d84ec3d7a403fd84fb2692e1a34f7a89,
+        type: 3}
       propertyPath: bodyPrefab
       value: 
       objectReference: {fileID: 3741349642904719271, guid: dc301b476bf521d42af823294c287fad,
@@ -1112,9 +1118,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b0fd60e450ea054281561c5c2eb7cb9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  assembler: {fileID: 8127435084766899153}
   rb: {fileID: 8156532911617399888}
   stat: {fileID: 3377103411190705507}
+  assembler: {fileID: 8127435084766899153}
 --- !u!136 &2770638521414920290
 CapsuleCollider:
   m_ObjectHideFlags: 0
