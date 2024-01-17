@@ -73,7 +73,8 @@ public class Health : MonoBehaviour, IDamageable
         //Grab Our Defensive Value From Torso & See If We Reduced Damage This Turn
 
         float reducedPercentage = UnityEngine.Random.Range(0f, 100f); // Random Range Is Generated Between 0 And 100
-        
+
+        float calculatedDamage = damageTaken;
         /*if(reducedPercentage <= "Insert Torso Defense Value Here")
         {
             float newHealth = currentHealth - damageTaken * .50f; //Reduced Damage Taken By Player In Half
@@ -81,7 +82,12 @@ public class Health : MonoBehaviour, IDamageable
         }
         */
 
-        float newHealth = currentHealth - damageTaken; //No Reduced Damage Taken Place
+        if (mechaStat.HasStatus(StatusEffect.DamageReduction50))
+        {
+            calculatedDamage *= 0.5f;
+        }
+
+        float newHealth = currentHealth - calculatedDamage; //No Reduced Damage Taken Place
         return newHealth; //Returns Value
     }
 

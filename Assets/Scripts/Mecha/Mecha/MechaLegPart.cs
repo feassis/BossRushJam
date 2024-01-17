@@ -1,5 +1,4 @@
-﻿using System;
-using System.Threading;
+﻿using System.Threading;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -27,7 +26,7 @@ public class MechaLegPart : MechaPart
         agent.SetDestination(destination);
     }
 
-    public virtual void OnDashAction()
+    public virtual void OnLegAction()
     {
         if(isDashing)
         {

@@ -41,12 +41,12 @@ public class Bullet : MonoBehaviour
         other.gameObject.TryGetComponent<IDamageable>(out IDamageable damageable);
         if (damageable != null)
         {
-            ApplyBulletDamage(damageable);
+            ApplyBulletDamage(damageable, other.gameObject);
             Destroy(gameObject);
         }
     }
 
-    protected virtual void ApplyBulletDamage(IDamageable damageable)
+    protected virtual void ApplyBulletDamage(IDamageable damageable, GameObject hitedObj)
     {
         damageable.TakeDamage(dmg);
     }

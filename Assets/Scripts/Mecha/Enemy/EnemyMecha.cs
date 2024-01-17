@@ -4,12 +4,11 @@ using UnityEngine;
 using UnityEngine.AI;
 using static UnityEngine.GraphicsBuffer;
 
-public class EnemyMecha : MonoBehaviour
+public class EnemyMecha : Mecha
 {
     [SerializeField] protected NavMeshAgent _agent;
     [SerializeField] protected MechaAssembler assembler;
-    [SerializeField] protected Rigidbody rb;
-    [SerializeField] protected MechaStats stat;
+    
 
     protected MechaLegPart leg;
     protected MechaArmPart leftArm;
@@ -24,6 +23,7 @@ public class EnemyMecha : MonoBehaviour
 
     protected virtual void Start()
     {
+        MechaManager.Instance.AddMecha(this, false);
         var statList = new List<AvailableStat>();
         statList.AddRange(stat.Stats);
 

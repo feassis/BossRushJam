@@ -5,13 +5,11 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
-public class PlayerControler : MonoBehaviour
+public class PlayerControler : Mecha
 {
     public static PlayerControler Instance;
 
     [SerializeField] private MechaAssembler assembler;
-    [SerializeField] private Rigidbody rb;
-    [SerializeField] private MechaStats stat;
 
     private MechaLegPart leg;
     private MechaArmPart leftArm;
@@ -101,7 +99,7 @@ public class PlayerControler : MonoBehaviour
 
     private void OnDashAction(InputAction.CallbackContext context)
     {
-        leg.OnDashAction();
+        leg.OnLegAction();
     }
 
     private void OnMoveAction(InputAction.CallbackContext context)
@@ -125,6 +123,7 @@ public class PlayerControler : MonoBehaviour
 
     void Start()
     {
+        MechaManager.Instance.AddMecha(this, true);
         var statList = new List<AvailableStat>();
         statList.AddRange(stat.Stats);
 

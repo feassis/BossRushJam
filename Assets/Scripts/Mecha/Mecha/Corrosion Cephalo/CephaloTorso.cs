@@ -37,5 +37,6 @@ public class CephaloTorso : MechaBodyPart
         yield return new WaitForSeconds(shieldDuration);
         mechaStats.RemoveStatusEffect(StatusEffect.Rooted);
         mechaStats.RemoveStatusEffect(StatusEffect.Invulnerable);
+        isShieldOn = false;
     }
 }
