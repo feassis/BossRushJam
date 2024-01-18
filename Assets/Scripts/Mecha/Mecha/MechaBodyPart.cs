@@ -35,23 +35,25 @@ public class MechaBodyPart : MechaPart
 
     protected virtual void Update()
     {
-        if (target != null)
+        if(target == null || mechaStats.HasStatus(StatusEffect.GrabbingRooted))
         {
-            // Calculate the direction to the target
-            Vector3 directionToTarget = target - transform.position;
+            return;
+        }
 
-            // Ensure that the direction has a non-zero length
-            if (directionToTarget.sqrMagnitude > 0.001f)
-            {
-                // Flatten the direction to only consider the X-Z plane
-                directionToTarget.y = 0f;
+        // Calculate the direction to the target
+        Vector3 directionToTarget = target - transform.position;
 
-                // Create a rotation that looks towards the target in the X-Z plane
-                Quaternion targetRotation = Quaternion.LookRotation(directionToTarget, Vector3.up);
+        // Ensure that the direction has a non-zero length
+        if (directionToTarget.sqrMagnitude > 0.001f)
+        {
+            // Flatten the direction to only consider the X-Z plane
+            directionToTarget.y = 0f;
 
-                // Smoothly rotate towards the target rotation
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
-            }
+            // Create a rotation that looks towards the target in the X-Z plane
+            Quaternion targetRotation = Quaternion.LookRotation(directionToTarget, Vector3.up);
+
+            // Smoothly rotate towards the target rotation
+            transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, Time.deltaTime * rotationSpeed);
         }
     }
 }

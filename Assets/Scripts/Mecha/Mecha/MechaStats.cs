@@ -111,7 +111,7 @@ public class MechaStats : MonoBehaviour
     {
         float rawSpeedStatus = GetStat(Stat.SPD).Amount;
 
-        if (HasStatus(StatusEffect.Rooted))
+        if (HasStatus(StatusEffect.Rooted) || HasStatus(StatusEffect.GrabbingRooted))
         {
             return 0;
         }
@@ -167,5 +167,6 @@ public enum StatusEffect
     Invulnerable = 2,
     DefenseDown30 =3,
     DamageReduction50 = 4,
-    SlowDown50 = 5
+    SlowDown50 = 5,
+    GrabbingRooted = 6
 }
