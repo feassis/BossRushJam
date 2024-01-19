@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -20,19 +19,19 @@ public class Bullet : MonoBehaviour
         StartCoroutine(Lifetime());
     }
 
-    private IEnumerator Lifetime()
+    protected IEnumerator Lifetime()
     {
         yield return new WaitForSeconds(10);
 
         Destroy(gameObject);
     }
 
-    private void Update()
+    protected virtual void Update()
     {
         transform.position += movementDirection.normalized * speed * Time.deltaTime;
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         if(other.gameObject == owner)
         {
