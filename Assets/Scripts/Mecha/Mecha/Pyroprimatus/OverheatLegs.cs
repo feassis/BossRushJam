@@ -9,7 +9,7 @@ public class OverheatLegs : MechaLegPart
     private bool isOverheated;
     private DamageType damageType;
 
-    public override void OnDashAction()
+    public override void OnLegAction()
     {
         if (isOverheated)
         {

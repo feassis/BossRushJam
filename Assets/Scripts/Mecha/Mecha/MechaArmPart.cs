@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.Rendering;
 
 public class MechaArmPart : MechaPart
 {
@@ -7,7 +8,7 @@ public class MechaArmPart : MechaPart
 
     public float GetDamage() => mechaStats.GetStat(Stat.ATK).Amount * atkUsage + mechaStats.GetStat(Stat.INT).Amount * intUsage;
 
-    public virtual void OnAttackPressed()
+    public virtual void OnAttackPressed(bool isplayerTarget = false)
     {
 
     }

@@ -866,15 +866,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statList:
-  - Type: 2
-    Amount: 100
   - Type: 4
-    Amount: 10
+    Amount: 3
+  abilityManaCost: 1
   atkUsage: 0.1
-  intUsage: 0.1
+  intUsage: 0.01
   projectileSpawnPos: {fileID: 6250147214455557547}
   fireRate: 3
-  damagePerBullet: 1
   bulletSpeed: 20
   bulletPrefab: {fileID: 8716573156184948710, guid: 2512efdfd87f37c41807b59b52ab75de,
     type: 3}

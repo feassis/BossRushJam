@@ -12,9 +12,18 @@ public class MechaArmSimpleArcShort : MechaArmPart
 
     private float shootTimer = 0;
 
-    public override void OnAttackPressed()
+    Vector3 target;
+    bool isPlayerTarget;
+
+    public override void OnAttackPressed(bool isplayerTarget = false)
     {
-        base.OnAttackPressed();
+        base.OnAttackPressed(isPlayerTarget);
+
+        if (isplayerTarget)
+        {
+            SetPlayerAsTarget();
+        }
+
         Shoot();
     }
 
@@ -33,6 +42,11 @@ public class MechaArmSimpleArcShort : MechaArmPart
         }
     }
 
+    public void SetPlayerAsTarget()
+    {
+        isPlayerTarget = true;
+    }
+
     private void Shoot()
     {
         if(shootTimer > 0)
@@ -43,7 +57,7 @@ public class MechaArmSimpleArcShort : MechaArmPart
         SpendManaAndAct(() =>
         {
             shootTimer = GetCooldown();
-            var target = MouseWorld.GetMousePosition();
+            target = isPlayerTarget ? PlayerControler.Instance.transform.position : MouseWorld.GetMousePosition();
 
             Vector3 initialVelocity = (target - projectileSpawnPos.position - (Physics.gravity * timeToHitTarget * timeToHitTarget) / 2) / timeToHitTarget;
 

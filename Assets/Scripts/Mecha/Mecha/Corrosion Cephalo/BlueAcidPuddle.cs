@@ -31,7 +31,7 @@ public class BlueAcidPuddle : MonoBehaviour
             return;
         }
 
-        if(TryGetComponent<IDamageable>(out IDamageable damageble))
+        if (other.gameObject.TryGetComponent<IDamageable>(out IDamageable damageble))
         {
             damageables.Add(damageble);
         }
@@ -71,6 +71,8 @@ public class BlueAcidPuddle : MonoBehaviour
 
         if (damageTimer >= dmgPeriod)
         {
+            damageTimer = 0;
+
             foreach (var damageble in damageables)
             {
                 if (damageble != null)

@@ -45,7 +45,7 @@ GameObject:
   - component: {fileID: 1679813444236517072}
   - component: {fileID: 518577978393160815}
   m_Layer: 0
-  m_Name: AcidShieldBubbleTorso
+  m_Name: CephaloTorso
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -68,6 +68,7 @@ Transform:
   - {fileID: 5478314185854016737}
   - {fileID: 5665340863113877572}
   - {fileID: 7577123867488189894}
+  - {fileID: 2060494881511749490}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!33 &7805001524537339008
@@ -171,6 +172,7 @@ MonoBehaviour:
   rightArmSocket: {fileID: 7577123867488189894}
   legSocket: {fileID: 5478314185854016737}
   rotationSpeed: 180
+  middleArmSocket: {fileID: 2060494881511749490}
   shieldDuration: 10
   shield: {fileID: 2491516496624137894, guid: e4093c1dc1df1ea4d93b8c16f1d4f0e7, type: 3}
 --- !u!1 &6059541177930518221
@@ -287,6 +289,37 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!1 &8963740672786492308
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2060494881511749490}
+  m_Layer: 0
+  m_Name: MiddleArmSocket
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2060494881511749490
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8963740672786492308}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.342, z: 0.668}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1124664158861829222}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9116852234857040283
 GameObject:
   m_ObjectHideFlags: 0

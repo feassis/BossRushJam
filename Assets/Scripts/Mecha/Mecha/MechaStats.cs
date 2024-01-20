@@ -10,20 +10,81 @@ public class MechaStats : MonoBehaviour
 
     private List<StatusEffect> effects = new List<StatusEffect>();
 
+    private List<StatusDuration> durations = new List<StatusDuration>();
+
+    private class StatusDuration
+    {
+        public StatusEffect Effect;
+        public float Duration;
+
+        public StatusDuration(StatusEffect effect, float duration)
+        {
+            Effect = effect;
+            Duration = duration;
+        }
+    }
+
+    private void Update()
+    {
+        List<StatusDuration> tempDurations = new List<StatusDuration>();
+        tempDurations.AddRange(durations);
+
+        foreach(var duration in tempDurations)
+        {
+            duration.Duration -= Time.deltaTime;
+
+            if (duration.Duration <= 0)
+            {
+                RemoveStatusEffect(duration.Effect);
+            }
+        }
+    }
+
     public void AddStatusEffect(StatusEffect statusEffect)
     {
+        if (effects.Contains(statusEffect))
+        {
+            return;
+        }
+
         effects.Add(statusEffect);
+    }
+
+    public void AddStatusEffectWithLifetime(StatusEffect statusEffect, float duration)
+    {
+        AddStatusEffect(statusEffect);
+
+        var effectDuration = durations.Find(d => d.Effect == statusEffect);
+
+        if (effectDuration != null)
+        {
+            effectDuration.Duration = duration;
+        }
+        else
+        {
+            durations.Add(new StatusDuration(statusEffect, duration));
+        }
+
     }
 
     public void RemoveStatusEffect(StatusEffect statusEffect)
     {
         effects.Remove(statusEffect);
+
+        var effectDuration = durations.Find(d => d.Effect == statusEffect);
+
+        if (effectDuration != null)
+        {
+            durations.Remove(effectDuration);
+        }
     }
 
     public bool HasStatus(StatusEffect statusEffect)
     {
         return effects.Contains(statusEffect);
     }
+
+    public List<AvailableStat> Stats { get { return stats; } }
 
     public Health GetHealth()
     {
@@ -40,11 +101,28 @@ public class MechaStats : MonoBehaviour
 
         return stat switch
         {
-            Stat.SPD => HasStatus(StatusEffect.Rooted) ? 0 : GetStat(Stat.SPD).Amount,
+            Stat.SPD => GetSpeedStat(),
+            Stat.DEF => HasStatus(StatusEffect.DefenseDown30) ? GetStat(Stat.DEF).Amount * (0.7f) : GetStat(Stat.DEF).Amount, 
             _ => GetStat(stat).Amount
         };
     }
 
+    private float GetSpeedStat()
+    {
+        float rawSpeedStatus = GetStat(Stat.SPD).Amount;
+
+        if (HasStatus(StatusEffect.Rooted) || HasStatus(StatusEffect.GrabbingRooted))
+        {
+            return 0;
+        }
+
+        if (HasStatus(StatusEffect.SlowDown50))
+        {
+            return rawSpeedStatus * 0.5f;
+        }
+
+        return rawSpeedStatus;
+    }
 
     public AvailableStat GetStat(Stat stat) 
     {
@@ -87,4 +165,8 @@ public enum StatusEffect
     None = 0,
     Rooted = 1,
     Invulnerable = 2,
+    DefenseDown30 =3,
+    DamageReduction50 = 4,
+    SlowDown50 = 5,
+    GrabbingRooted = 6
 }

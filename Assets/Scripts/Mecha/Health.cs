@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,12 +9,16 @@ public class Health : MonoBehaviour, IDamageable
     private float currentHealth; //Current Health That The Player Has
     private MechaStats mechaStat;
     private DamageType damageType; //ADDED
+    public event Action<float, float> OnDamageTaken;
+    public event Action<float, float> OnDamageHealed;
+    public event Action OnSetupEnded;
 
     public void Setup(float hp, MechaStats stats)
     {
         maxHealth = hp;
         currentHealth = maxHealth;
         mechaStat = stats;
+        OnSetupEnded?.Invoke();
     }
 
     public float GetMaxHealth() => maxHealth;
@@ -47,7 +52,8 @@ public class Health : MonoBehaviour, IDamageable
 
     public void Heal(float healAmount) //Function Called Upon Player Heal
     {
-        currentHealth = CaluclateHeal(healAmount);
+        currentHealth = Mathf.Clamp(CaluclateHeal(healAmount), 0, maxHealth);
+        OnDamageHealed?.Invoke(GetCurrentHealth(), GetMaxHealth());
     }
 
     private void Death() //Function Called Upon Player Health Reaching Zero
@@ -89,6 +95,14 @@ public class Health : MonoBehaviour, IDamageable
             float healthAfterDamage = currentHealth -= damageTaken;
             return healthAfterDamage;
         }
+        
+        if (mechaStat.HasStatus(StatusEffect.DamageReduction50))
+        {
+            calculatedDamage *= 0.5f;
+        }
+
+        float newHealth = currentHealth - calculatedDamage; //No Reduced Damage Taken Place
+        return newHealth; //Returns Value
     }
 
     private float CaluclateHeal(float healAmount) //Responsible For Calculating Health After Healing

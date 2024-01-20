@@ -1,6 +1,6 @@
-﻿using System;
-using System.Threading;
+﻿using System.Threading;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class MechaLegPart : MechaPart
 {
@@ -18,7 +18,15 @@ public class MechaLegPart : MechaPart
         this.direction = direction;
     }
 
-    public virtual void OnDashAction()
+    public virtual void  SetDestination(NavMeshAgent agent, Vector3 destination)
+    {
+        var speedStat = mechaStats.GetStatValue(Stat.SPD);
+        agent.speed = isDashing ? speedStat * dashSpeedMultiplier : speedStat;
+
+        agent.SetDestination(destination);
+    }
+
+    public virtual void OnLegAction()
     {
         if(isDashing)
         {

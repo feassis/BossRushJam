@@ -7,7 +7,7 @@ public class DamageOverTimeBullet : Bullet
     [SerializeField] private float damageFraction = 0.3333f ;
     [SerializeField] private float duration = 5f;
     [SerializeField] private int numberOfTicks = 10;
-    protected override void ApplyBulletDamage(IDamageable damageable)
+    protected override void ApplyBulletDamage(IDamageable damageable, GameObject hitedObj)
     {
         damageable.TakeDamageOverTime(dmg * damageFraction, duration, numberOfTicks);
     }

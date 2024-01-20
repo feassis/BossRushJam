@@ -367,11 +367,10 @@ MonoBehaviour:
   - Type: 4
     Amount: 10
   abilityManaCost: 35
-  atkUsage: 2
-  intUsage: 0.1
+  atkUsage: 0.2
+  intUsage: 0.01
   projectileSpawnPos: {fileID: 6250147214455557547}
-  fireRate: 3
-  damagePerBullet: 1
+  fireRate: 0.5
   bulletSpeed: 5
   bulletPrefab: {fileID: 6150746416522673762, guid: b39afae982ded444fa9792b1d73b4181,
     type: 3}

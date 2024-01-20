@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
@@ -17,28 +16,37 @@ public class Bullet : MonoBehaviour
         this.speed = speed;
         this.movementDirection = directon;
         this.owner = owner;
+
+        StartCoroutine(Lifetime());
     }
 
-    private void Update()
+    protected IEnumerator Lifetime()
+    {
+        yield return new WaitForSeconds(10);
+
+        Destroy(gameObject);
+    }
+
+    protected virtual void Update()
     {
         transform.position += movementDirection.normalized * speed * Time.deltaTime;
     }
 
-    private void OnTriggerEnter(Collider other)
+    protected virtual void OnTriggerEnter(Collider other)
     {
         if(other.gameObject == owner)
         {
             return;
         }
-        TryGetComponent<IDamageable>(out IDamageable damageable);
+        other.gameObject.TryGetComponent<IDamageable>(out IDamageable damageable);
         if (damageable != null)
         {
-            ApplyBulletDamage(damageable);
+            ApplyBulletDamage(damageable, other.gameObject);
             Destroy(gameObject);
         }
     }
 
-    protected virtual void ApplyBulletDamage(IDamageable damageable)
+    protected virtual void ApplyBulletDamage(IDamageable damageable, GameObject hitedObj)
     {
         damageable.TakeDamage(dmg, DamageType.NONE);
     }

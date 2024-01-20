@@ -5,11 +5,11 @@ using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 
-public class PlayerControler : MonoBehaviour
+public class PlayerControler : Mecha
 {
+    public static PlayerControler Instance;
+
     [SerializeField] private MechaAssembler assembler;
-    [SerializeField] private Rigidbody rb;
-    [SerializeField] private MechaStats stat;
 
     private MechaLegPart leg;
     private MechaArmPart leftArm;
@@ -25,6 +25,13 @@ public class PlayerControler : MonoBehaviour
 
     private void Awake()
     {
+        if(Instance != null)
+        {
+            Destroy(gameObject);
+        }
+
+        Instance = this;
+
         mechaControls = new PlayerMechaControls();
         mechaControls.Enable();
 
@@ -50,6 +57,14 @@ public class PlayerControler : MonoBehaviour
         defenseAction = mechaControls.FindAction("DefenseAbility");
         defenseAction.performed += OnDefensePerformed;
         defenseAction.canceled += OnDefenseCanceled;    
+    }
+
+    private void OnDestroy()
+    {
+        if(Instance == this)
+        {
+            Instance = null;
+        }
     }
 
     private void OnDefenseCanceled(InputAction.CallbackContext context)
@@ -84,7 +99,7 @@ public class PlayerControler : MonoBehaviour
 
     private void OnDashAction(InputAction.CallbackContext context)
     {
-        leg.OnDashAction();
+        leg.OnLegAction();
     }
 
     private void OnMoveAction(InputAction.CallbackContext context)
@@ -108,7 +123,9 @@ public class PlayerControler : MonoBehaviour
 
     void Start()
     {
-        List<AvailableStat> statList = new List<AvailableStat>();
+        MechaManager.Instance.AddMecha(this, true);
+        var statList = new List<AvailableStat>();
+        statList.AddRange(stat.Stats);
 
         leg = assembler.LegPart;
         leftArm = assembler.LeftArmPart;
@@ -128,5 +145,10 @@ public class PlayerControler : MonoBehaviour
         stat.Setup(statList);
 
         CameraControler.Instance.GoToFollowPlayerMode(gameObject);
+    }
+
+    private void Update()
+    {
+        body.SetLookUpTarget(MouseWorld.GetMousePosition());
     }
 }

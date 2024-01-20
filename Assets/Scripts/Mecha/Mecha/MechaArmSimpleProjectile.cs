@@ -2,21 +2,20 @@
 
 public class MechaArmSimpleProjectile: MechaArmPart
 {
-    [SerializeField] private Transform projectileSpawnPos;
-    [SerializeField] private float fireRate = 3;
-    [SerializeField] private float damagePerBullet;
-    [SerializeField] private float bulletSpeed = 20;
-    [SerializeField] private Bullet bulletPrefab;
-    [SerializeField] private Vector3 bulletSpreadVariance = new Vector3(0.1f, 0.1f, 0.1f);
+    [SerializeField] protected Transform projectileSpawnPos;
+    [SerializeField] protected float fireRate = 3;
+    [SerializeField] protected float bulletSpeed = 20;
+    [SerializeField] protected Bullet bulletPrefab;
+    [SerializeField] protected Vector3 bulletSpreadVariance = new Vector3(0.1f, 0.1f, 0.1f);
 
-    private float GetCooldown() => 1 / fireRate;
+    protected float GetCooldown() => 1 / fireRate;
 
-    private bool isShooting = false;
-    private float shootTimer;
+    protected bool isShooting = false;
+    protected float shootTimer;
 
-    public override void OnAttackPressed()
+    public override void OnAttackPressed(bool isplayerTarget = false)
     {
-        base.OnAttackPressed();
+        base.OnAttackPressed(isplayerTarget);
         isShooting = true;
     }
 
@@ -44,6 +43,7 @@ public class MechaArmSimpleProjectile: MechaArmPart
                 bullet.transform.position = projectileSpawnPos.position;
                 bullet.transform.rotation = projectileSpawnPos.rotation;
 
+                var damagePerBullet = GetDamage();
                 bullet.Setup(damagePerBullet, bulletSpeed, GetShootDirection(), parent.gameObject);
 
                 shootTimer = GetCooldown();
@@ -52,7 +52,7 @@ public class MechaArmSimpleProjectile: MechaArmPart
         }  
     }
 
-    private Vector3 GetShootDirection()
+    protected Vector3 GetShootDirection()
     {
         Vector3 direction = projectileSpawnPos.transform.forward;
 

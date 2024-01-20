@@ -1,11 +1,14 @@
 ﻿using System.Collections;
 using UnityEngine;
 
-public class AcidShieldBubbleTorso : MechaBodyPart
+public class CephaloTorso : MechaBodyPart
 {
+    [SerializeField] private Transform middleArmSocket;
     [SerializeField] private float shieldDuration = 10;
     [SerializeField] private AcidBubbleShield shield;
     private bool isShieldOn = false;
+
+    public Transform GetMiddleArmSocket() { return middleArmSocket; }
 
     public override void OnDefensePerformed()
     {
@@ -34,5 +37,6 @@ public class AcidShieldBubbleTorso : MechaBodyPart
         yield return new WaitForSeconds(shieldDuration);
         mechaStats.RemoveStatusEffect(StatusEffect.Rooted);
         mechaStats.RemoveStatusEffect(StatusEffect.Invulnerable);
+        isShieldOn = false;
     }
 }
