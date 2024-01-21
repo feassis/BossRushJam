@@ -11,6 +11,7 @@ public class CephaloMecha : EnemyMecha
     [SerializeField] private float movementCoroutineInterval = 0.5f;
     [SerializeField] private float[] playerAvoidanceAngles = new float[2];
     [SerializeField] private float strafeAngle = 20f;
+    [SerializeField] private float legAbilityInterval = 30f;
 
     [Header("Attack Configuration")]
     [SerializeField] private float attackModeInterval = 10;
@@ -50,6 +51,17 @@ public class CephaloMecha : EnemyMecha
         stat.Setup(statList);
 
         StartCoroutine(MovementCoroutine());
+        StartCoroutine(LegAbilityRoutine());
+    }
+
+    private IEnumerator LegAbilityRoutine()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(legAbilityInterval);
+
+            leg.OnLegAction();
+        }
     }
 
     private IEnumerator MovementCoroutine()
