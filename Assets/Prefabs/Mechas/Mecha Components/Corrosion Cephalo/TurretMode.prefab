@@ -12,10 +12,9 @@ GameObject:
   - component: {fileID: 4119109907869870473}
   - component: {fileID: 1035700692711233085}
   - component: {fileID: 5605143987397557376}
-  - component: {fileID: 655629654750977751}
-  - component: {fileID: 4062062877253556982}
+  - component: {fileID: 922239517205208322}
   m_Layer: 0
-  m_Name: BasicLeg
+  m_Name: TurretMode
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -107,25 +106,7 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &655629654750977751
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8173931935735559272}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1dea49dee2984e44f9be040dcc0acb07, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  statList:
-  - Type: 6
-    Amount: 10
-  abilityManaCost: 1
-  dashSpeedMultiplier: 3
-  dashDuration: 0.2
---- !u!114 &4062062877253556982
+--- !u!114 &922239517205208322
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -138,7 +119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statList: []
-  abilityManaCost: 350
+  abilityManaCost: 35
   dashSpeedMultiplier: 3
   dashDuration: 0
-  duration: 1
+  duration: 10
