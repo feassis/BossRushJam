@@ -661,6 +661,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player Mecha
       objectReference: {fileID: 0}
+    - target: {fileID: 3377103411190705507, guid: 44d922d516f0cba489de509890784e30,
+        type: 3}
+      propertyPath: stats.Array.data[4].Amount
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 5217276355649024601, guid: 44d922d516f0cba489de509890784e30,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -733,7 +738,7 @@ PrefabInstance:
         type: 3}
       propertyPath: rightArmPrefab
       value: 
-      objectReference: {fileID: 1660623612055999486, guid: 475110e0e506d124281a00b3861aa700,
+      objectReference: {fileID: 8514133288461211370, guid: 607f926d49b9603428466b9bba2b28b5,
         type: 3}
     - target: {fileID: 8156532911617399888, guid: 44d922d516f0cba489de509890784e30,
         type: 3}
