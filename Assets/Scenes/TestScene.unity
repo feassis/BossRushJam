@@ -732,7 +732,7 @@ PrefabInstance:
         type: 3}
       propertyPath: leftArmPrefab
       value: 
-      objectReference: {fileID: 6054665808477555457, guid: ae41b8552d84716438ebf56d4f0804ac,
+      objectReference: {fileID: 8037921016920115049, guid: 0a46019d41e8aea4ca5b26e8c5a87672,
         type: 3}
     - target: {fileID: 8127435084766899153, guid: 44d922d516f0cba489de509890784e30,
         type: 3}
