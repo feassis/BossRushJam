@@ -3,13 +3,13 @@ using UnityEngine;
 
 public class SphereDetection : MonoBehaviour
 {
-    private List<Health> entitiesInRange = new List<Health>();
+    protected List<Health> entitiesInRange = new List<Health>();
 
     private GameObject owner;
 
     public List<Health> GetEntitiesInRange() => entitiesInRange;
 
-    public void Setup(GameObject owner)
+    public virtual void Setup(GameObject owner)
     {
         this.owner = owner; 
     }

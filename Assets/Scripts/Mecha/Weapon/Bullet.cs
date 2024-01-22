@@ -1,10 +1,11 @@
 using System.Collections;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
     protected float dmg;
-    private float speed;
+    protected float speed;
     private Vector3 movementDirection = Vector3.zero;
     private DamageType damageType;
 

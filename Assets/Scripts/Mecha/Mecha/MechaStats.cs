@@ -103,11 +103,27 @@ public class MechaStats : MonoBehaviour
         {
             Stat.SPD => GetSpeedStat(),
             Stat.DEF => GetDefStatus(),
-            Stat.WIS => HasStatus(StatusEffect.Wis125) ? GetStat(Stat.WIS).Amount * 1.25f : GetStat(Stat.WIS).Amount,
+            Stat.WIS => GetWisStatus(),
             Stat.ATK => HasStatus(StatusEffect.Atk200) ? GetStat(Stat.ATK).Amount * 2f : GetStat(Stat.ATK).Amount,
             Stat.INT => HasStatus(StatusEffect.Int200) ? GetStat(Stat.INT).Amount * 2f : GetStat(Stat.INT).Amount,
             _ => GetStat(stat).Amount
         };
+    }
+
+    private float GetWisStatus()
+    {
+        if (HasStatus(StatusEffect.Wis125))
+        {
+            return GetStat(Stat.WIS).Amount * 1.25f;
+        }
+
+        if (HasStatus(StatusEffect.Wis90))
+        {
+            return GetStat(Stat.WIS).Amount * 0.9f;
+        }
+
+
+        return GetStat(Stat.WIS).Amount;
     }
 
     private float GetDefStatus()
@@ -191,4 +207,5 @@ public enum StatusEffect
     Atk200 = 8,
     Def125 = 9,
     Wis125 = 10,
+    Wis90 = 11,
 }
