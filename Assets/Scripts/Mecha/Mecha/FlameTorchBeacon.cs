@@ -10,6 +10,7 @@ public class FlameTorchBeacon : MechaArmPart
     [SerializeField] private Transform flameTip;
     [SerializeField] private float tickSpeed = 0.2f;
     [SerializeField] private float manaRenewalInterval = 1f;
+    [SerializeField] private ParticleSystem flameParticles;
 
     private bool isShooting;
     private float tickTimer;
@@ -29,12 +30,14 @@ public class FlameTorchBeacon : MechaArmPart
             isShooting = true;
             tickTimer = tickSpeed;
             manaTimer = manaRenewalInterval;
+            flameParticles.gameObject.SetActive(true);
         });
     }
 
     public override void OnAttackReleased()
     {
         isShooting = false;
+        flameParticles.gameObject.SetActive(false);
     }
 
     private void OnDrawGizmos()
@@ -95,6 +98,12 @@ public class FlameTorchBeacon : MechaArmPart
             });
 
             isShooting = hasMana;
+
+            if(!hasMana)
+            {
+                flameParticles.gameObject.SetActive(false);
+            }
+
             manaTimer = manaRenewalInterval;
         }
     }
