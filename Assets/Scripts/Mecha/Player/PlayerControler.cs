@@ -65,6 +65,11 @@ public class PlayerControler : Mecha
         {
             Instance = null;
         }
+
+        if(MechaManager.Instance != null)
+        {
+            MechaManager.Instance.RemoveMecha(this, true);
+        }
     }
 
     private void OnDefenseCanceled(InputAction.CallbackContext context)
@@ -74,7 +79,7 @@ public class PlayerControler : Mecha
 
     private void OnDefensePerformed(InputAction.CallbackContext context)
     {
-        body.OnDefensePerformed();
+        body.OnDefensePerformed(false);
     }
 
     private void OnRightWeaponCanceled(InputAction.CallbackContext context)

@@ -11,7 +11,7 @@ public class EnergyShieldTorso : MechaBodyPart
     private GameObject shieldInst;
     private float shieldTimer = 0;
 
-    public override void OnDefensePerformed()
+    public override void OnDefensePerformed(bool isPlayerTarget)
     {
         SpendManaAndAct(() =>
         {

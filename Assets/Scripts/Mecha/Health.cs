@@ -38,6 +38,11 @@ public class Health : MonoBehaviour, IDamageable
 
         currentHealth = Mathf.Clamp(CalculateDamage(damageTaken), 0, maxHealth);
         OnDamageTaken?.Invoke(GetCurrentHealth(), GetMaxHealth());
+
+        if(currentHealth <= 0)
+        {
+            Death();
+        }
     }
 
     public void TakeDamageOverTime(float dmg, float duration, int numberOfTicks)
@@ -66,6 +71,8 @@ public class Health : MonoBehaviour, IDamageable
     {
         //Stop Accepting Player Input
         //Do Animation
+
+        Debug.Log("Death");
     }
 
     private float CalculateDamage(float damageTaken) //Responsible For Calculating Damage Player Takes From Enemies

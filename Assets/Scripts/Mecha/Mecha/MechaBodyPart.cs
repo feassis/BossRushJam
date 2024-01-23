@@ -18,7 +18,7 @@ public class MechaBodyPart : MechaPart
 
     private Vector3 target;
 
-    public virtual void OnDefensePerformed()
+    public virtual void OnDefensePerformed(bool isPlayerTarget)
     {
       
     }

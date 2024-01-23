@@ -51,4 +51,16 @@ public class MechaManager : MonoBehaviour
             enemyMecha.Add(mecha);
         }
     }
+
+    public void RemoveMecha(Mecha mecha, bool isPlayer)
+    {
+        if (isPlayer)
+        {
+            playerMecha.Remove(mecha);
+        }
+        else
+        {
+            enemyMecha.Remove(mecha);
+        }
+    }
 }
