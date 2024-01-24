@@ -5269,10 +5269,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statList: []
-  abilityManaCost: 1
-  atkUsage: 1
-  intUsage: 1
-  flamethrowerRange: 0
+  abilityManaCost: 25
+  atkUsage: 0
+  intUsage: 0.14
+  flamethrowerRange: 8
   detectionArea: {fileID: 6977232498926523894}
   coneFlameWidth: 45
   flameTip: {fileID: 8111392294098952963}

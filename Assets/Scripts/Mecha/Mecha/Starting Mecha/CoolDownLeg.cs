@@ -16,7 +16,7 @@ public class CoolDownLeg : MechaLegPart
 
             var health = mechaStats.GetHealth();
 
-            health.TakeDamage(mechaStats.GetStat(Stat.HP).Amount * healthCostPercentage);
+            health.TakeDamage(mechaStats.GetStat(Stat.HP).Amount * healthCostPercentage, DamageType.NONE);
 
             foreach (var mech in allMechas)
             {

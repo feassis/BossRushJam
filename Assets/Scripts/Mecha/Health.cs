@@ -2,21 +2,17 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Health : MonoBehaviour, IDamageable
 {
     private float maxHealth;
     private float currentHealth; //Current Health That The Player Has
     private MechaStats mechaStat;
-
+    private DamageType damageType; //ADDED
     public event Action<float, float> OnDamageTaken;
     public event Action<float, float> OnDamageHealed;
     public event Action OnSetupEnded;
-
-    void Start()
-    {
-        //Grab Reference To Our Torso Defensive Stat
-    }
 
     public void Setup(float hp, MechaStats stats)
     {
@@ -29,17 +25,16 @@ public class Health : MonoBehaviour, IDamageable
     public float GetMaxHealth() => maxHealth;
     public float GetCurrentHealth() => currentHealth;
 
-    public void TakeDamage(float damageTaken) //Function Called As Declared By IDamageable Interface
+    public void TakeDamage(float damageTaken, DamageType damageType) //Function Called As Declared By IDamageable Interface
     {
         if (mechaStat.HasStatus(StatusEffect.Invulnerable))
         {
             return;
         }
-
-        currentHealth = Mathf.Clamp(CalculateDamage(damageTaken), 0, maxHealth);
+        currentHealth = Mathf.Clamp(CalculateDamage(damageTaken, damageType), 0, maxHealth);
         OnDamageTaken?.Invoke(GetCurrentHealth(), GetMaxHealth());
 
-        if(currentHealth <= 0)
+        if (currentHealth <= 0)
         {
             Death();
         }
@@ -56,7 +51,7 @@ public class Health : MonoBehaviour, IDamageable
         while(ticks < numberOfTicks)
         {
             yield return new WaitForSeconds(duration / numberOfTicks);
-            TakeDamage(dmg / numberOfTicks);
+            TakeDamage(dmg / numberOfTicks, DamageType.NONE); //ADDED
             ticks++;
         }
     }
@@ -75,26 +70,45 @@ public class Health : MonoBehaviour, IDamageable
         Debug.Log("Death");
     }
 
-    private float CalculateDamage(float damageTaken) //Responsible For Calculating Damage Player Takes From Enemies
+    private float CalculateDamage(float damageTaken, DamageType damageType) //Responsible For Calculating Damage Player Takes From Enemies
     {
-        //Grab Our Defensive Value From Torso & See If We Reduced Damage This Turn
-
-        float reducedPercentage = UnityEngine.Random.Range(0f, 100f); // Random Range Is Generated Between 0 And 100
-
-        float calculatedDamage = damageTaken;
-        /*if(reducedPercentage <= "Insert Torso Defense Value Here")
+        float calculatedDamage;
+        switch (damageType)
         {
-            float newHealth = currentHealth - damageTaken * .50f; //Reduced Damage Taken By Player In Half
-            return newHealth; //Returns Value
+            case DamageType.PHYSICAL:
+            AvailableStat defenseStat = mechaStat.GetStat(Stat.DEF);
+            float defenseValue = defenseStat.Amount;
+            float reducedPhysicalPercentage = Random.Range(0f, 100f);
+
+            if (reducedPhysicalPercentage <= defenseValue)
+            {
+                calculatedDamage = damageTaken * 0.50f;
+            }
+            goto case default;
+
+            case DamageType.MAGIC:
+            AvailableStat wisdomStat = mechaStat.GetStat(Stat.WIS);
+            float wisdomValue = wisdomStat.Amount;
+            float reducedMagicPercentage = Random.Range(0f, 100f);
+
+            if (reducedMagicPercentage <= wisdomValue)
+            {
+                // Display Reduced Damage
+                calculatedDamage = currentHealth - damageTaken * 0.50f;
+                }
+            goto case default;
+
+            default:
+            calculatedDamage = damageTaken;
+                break;
         }
-        */
 
         if (mechaStat.HasStatus(StatusEffect.DamageReduction50))
         {
             calculatedDamage *= 0.5f;
         }
 
-        float newHealth = currentHealth - calculatedDamage; //No Reduced Damage Taken Place
+        float newHealth = currentHealth - calculatedDamage; 
         return newHealth; //Returns Value
     }
 
