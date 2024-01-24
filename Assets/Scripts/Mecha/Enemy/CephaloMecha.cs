@@ -214,8 +214,3 @@ public class CephaloMecha : EnemyMecha
         leftArm.OnAttackPressed();
     }
 }
-
-public class Pyroprimatus : EnemyMecha
-{
-
-}

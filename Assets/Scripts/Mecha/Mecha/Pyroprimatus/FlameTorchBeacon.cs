@@ -25,6 +25,11 @@ public class FlameTorchBeacon : MechaArmPart
 
     public override void OnAttackPressed(bool isplayerTarget = false)
     {
+        if (isShooting)
+        {
+            return;
+        }
+
         SpendManaAndAct(() =>
         {
             isShooting = true;
