@@ -10,7 +10,7 @@ public class CephaloTorso : MechaBodyPart
 
     public Transform GetMiddleArmSocket() { return middleArmSocket; }
 
-    public override void OnDefensePerformed()
+    public override void OnDefensePerformed(bool isPlayerTarget)
     {
         if(isShieldOn)
         {

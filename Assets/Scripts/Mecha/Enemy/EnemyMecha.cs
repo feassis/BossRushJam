@@ -45,6 +45,14 @@ public class EnemyMecha : Mecha
         stat.Setup(statList);
     }
 
+    protected virtual void OnDestroy()
+    {
+        if (MechaManager.Instance != null)
+        {
+            MechaManager.Instance.RemoveMecha(this, false);
+        }
+    }
+
     protected virtual void Update()
     {
         body.SetLookUpTarget(PlayerControler.Instance.transform.position);

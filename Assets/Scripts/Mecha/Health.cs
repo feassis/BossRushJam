@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Health : MonoBehaviour, IDamageable
 {
@@ -30,8 +31,13 @@ public class Health : MonoBehaviour, IDamageable
         {
             return;
         }
+        currentHealth = Mathf.Clamp(CalculateDamage(damageTaken, damageType), 0, maxHealth);
+        OnDamageTaken?.Invoke(GetCurrentHealth(), GetMaxHealth());
 
-        currentHealth = CalculateDamage(damageTaken, damageType);
+        if (currentHealth <= 0)
+        {
+            Death();
+        }
     }
 
     public void TakeDamageOverTime(float dmg, float duration, int numberOfTicks)
@@ -60,10 +66,13 @@ public class Health : MonoBehaviour, IDamageable
     {
         //Stop Accepting Player Input
         //Do Animation
+
+        Debug.Log("Death");
     }
 
     private float CalculateDamage(float damageTaken, DamageType damageType) //Responsible For Calculating Damage Player Takes From Enemies
     {
+        float calculatedDamage;
         switch (damageType)
         {
             case DamageType.PHYSICAL:
@@ -73,8 +82,7 @@ public class Health : MonoBehaviour, IDamageable
 
             if (reducedPhysicalPercentage <= defenseValue)
             {
-                float healthAfterPhysical = currentHealth - damageTaken * 0.50f;
-                return healthAfterPhysical;
+                calculatedDamage = damageTaken * 0.50f;
             }
             goto case default;
 
@@ -86,22 +94,21 @@ public class Health : MonoBehaviour, IDamageable
             if (reducedMagicPercentage <= wisdomValue)
             {
                 // Display Reduced Damage
-                float healthAfterMagic = currentHealth - damageTaken * 0.50f;
-                return healthAfterMagic;
-            }
+                calculatedDamage = currentHealth - damageTaken * 0.50f;
+                }
             goto case default;
 
             default:
-            float healthAfterDamage = currentHealth -= damageTaken;
-            return healthAfterDamage;
+            calculatedDamage = damageTaken;
+                break;
         }
-        
+
         if (mechaStat.HasStatus(StatusEffect.DamageReduction50))
         {
             calculatedDamage *= 0.5f;
         }
 
-        float newHealth = currentHealth - calculatedDamage; //No Reduced Damage Taken Place
+        float newHealth = currentHealth - calculatedDamage; 
         return newHealth; //Returns Value
     }
 

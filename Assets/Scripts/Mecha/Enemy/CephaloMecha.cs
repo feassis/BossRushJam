@@ -178,7 +178,7 @@ public class CephaloMecha : EnemyMecha
         if(defenseTimer < 0)
         {
             defenseTimer = defenseCooldown;
-            body.OnDefensePerformed();
+            body.OnDefensePerformed(true);
         }
     }
 

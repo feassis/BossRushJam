@@ -5230,7 +5230,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1336960006150822898}
-  - component: {fileID: 6054665808477555457}
+  - component: {fileID: 4803693860086551493}
   m_Layer: 0
   m_Name: FlameTorchBeacon
   m_TagString: Untagged
@@ -5256,7 +5256,7 @@ Transform:
   - {fileID: 1022122752203924525}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &6054665808477555457
+--- !u!114 &4803693860086551493
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5268,17 +5268,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00f3aa0c3de96a84aa38603d8adca948, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  statList:
-  - Type: 4
-    Amount: 2
-  abilityManaCost: 10
+  statList: []
+  abilityManaCost: 25
   atkUsage: 0
   intUsage: 0.14
-  flamethrowerRange: 20
+  flamethrowerRange: 8
   detectionArea: {fileID: 6977232498926523894}
-  coneFlameWidth: 60
+  coneFlameWidth: 45
   flameTip: {fileID: 8111392294098952963}
-  tickSpeed: 0.1
+  tickSpeed: 0.2
   manaRenewalInterval: 1
   flameParticles: {fileID: 5454239706265566580}
 --- !u!1001 &2338088322728946401

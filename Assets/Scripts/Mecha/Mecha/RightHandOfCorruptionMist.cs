@@ -29,7 +29,7 @@ public class RightHandOfCorruptionMist : SphereDetection
             tickTimer = tick;
             foreach (var entitie in entitiesInRange)
             {
-                entitie.TakeDamage(damage * tick);
+                entitie.TakeDamage(damage * tick, DamageType.MAGIC);
                 if(entitie.gameObject.TryGetComponent<Mana>(out Mana mana))
                 {
                     mana.SpendMana(mana.GetMaxMana() * manaPercentage);
