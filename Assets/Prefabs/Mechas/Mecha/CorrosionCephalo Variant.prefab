@@ -380,16 +380,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 514f4fbe879cc004389786a1a32e3eab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bodyPrefab: {fileID: 518577978393160815, guid: cf4a2d221e86d674ebe0fbc20153bdea,
-    type: 3}
-  leftArmPrefab: {fileID: 77793273993718283, guid: d2d4cf5cbc62569469717402b16316fe,
-    type: 3}
-  rightArmPrefab: {fileID: 9064934300366188529, guid: db6b653ff47b1744c922642e9abbf1b2,
-    type: 3}
-  legPrefab: {fileID: 922239517205208322, guid: 2caeab2dc56b1c64689da654e9675b56,
-    type: 3}
-  middleArmPrefab: {fileID: 77793273993718283, guid: 8e261f5bf6bd4b04ea90cf3e8e6c13e7,
-    type: 3}
+  torso: 2
+  leftArm: 6
+  rightArm: 4
+  leg: 2
+  middleArm: 5
 --- !u!114 &7811243802773723499
 MonoBehaviour:
   m_ObjectHideFlags: 0

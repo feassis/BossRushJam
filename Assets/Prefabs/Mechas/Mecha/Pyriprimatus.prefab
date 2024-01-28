@@ -311,6 +311,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2707295311374054959, guid: d84ec3d7a403fd84fb2692e1a34f7a89,
         type: 3}
+      propertyPath: leg
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2707295311374054959, guid: d84ec3d7a403fd84fb2692e1a34f7a89,
+        type: 3}
+      propertyPath: torso
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2707295311374054959, guid: d84ec3d7a403fd84fb2692e1a34f7a89,
+        type: 3}
+      propertyPath: leftArm
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2707295311374054959, guid: d84ec3d7a403fd84fb2692e1a34f7a89,
+        type: 3}
+      propertyPath: rightArm
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2707295311374054959, guid: d84ec3d7a403fd84fb2692e1a34f7a89,
+        type: 3}
       propertyPath: legPrefab
       value: 
       objectReference: {fileID: 5691867501568812715, guid: ac7310b5502eb06408794c2dea8b5b89,

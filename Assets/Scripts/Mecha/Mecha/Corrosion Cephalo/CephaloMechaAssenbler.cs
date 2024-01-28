@@ -2,7 +2,7 @@
 
 public class CephaloMechaAssenbler : MechaAssembler
 {
-    [SerializeField] protected MechaArmPart middleArmPrefab;
+    [SerializeField] protected MechaArms middleArm;
 
     protected MechaArmPart middleArmPart;
 
@@ -13,6 +13,6 @@ public class CephaloMechaAssenbler : MechaAssembler
     {
         base.Awake();
 
-        middleArmPart = Instantiate(middleArmPrefab, (bodyPart as CephaloTorso).GetMiddleArmSocket());
+        middleArmPart = Instantiate(MechaPartService.Instance.GetArmPart(middleArm), (bodyPart as CephaloTorso).GetMiddleArmSocket());
     }
 }
