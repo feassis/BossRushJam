@@ -110,7 +110,7 @@ public class PlayerControler : Mecha
     private void OnMoveAction(InputAction.CallbackContext context)
     {
         var moveDirection = context.ReadValue<Vector2>().normalized;
-        
+        Debug.Log("Movement Performed");
         leg.OnMoveAction(new Vector3(moveDirection.x, 0, moveDirection.y));
     }
 

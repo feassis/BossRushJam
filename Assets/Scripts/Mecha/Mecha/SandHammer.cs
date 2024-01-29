@@ -35,7 +35,7 @@ public class SandHammer : MechaArmPart
             timer = weaponCooldown;
             foreach (var health in sphereDetection.GetEntitiesInRange())
             {
-                health.TakeDamage(GetDamage());
+                health.TakeDamage(GetDamage(), DamageType.PHYSICAL);
                 if(health.gameObject.TryGetComponent<MechaStats>(out MechaStats mechaStats))
                 {
                     mechaStats.AddStatusEffectWithLifetime(StatusEffect.Rooted, stunDuration);

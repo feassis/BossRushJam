@@ -68,7 +68,7 @@ public class ChainedGhost : MonoBehaviour
                     continue;
                 }
 
-                health.TakeDamage(damage * tick);
+                health.TakeDamage(damage * tick, DamageType.MAGIC);
             }
         }
     }

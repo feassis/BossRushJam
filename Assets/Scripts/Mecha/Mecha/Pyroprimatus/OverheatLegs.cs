@@ -7,6 +7,7 @@ public class OverheatLegs : MechaLegPart
     [SerializeField] private float overheatDuration = 20;
     [SerializeField] private float selfDamagePercentage = 0.05f;
     private bool isOverheated;
+    private DamageType damageType;
 
     public override void OnLegAction()
     {
@@ -21,7 +22,7 @@ public class OverheatLegs : MechaLegPart
 
             var health = mechaStats.GetHealth();
 
-            health.TakeDamage(health.GetMaxHealth() * selfDamagePercentage);
+            health.TakeDamage(health.GetMaxHealth() * selfDamagePercentage, DamageType.NONE);
 
             StartCoroutine(OverheatLifeTime());
         });

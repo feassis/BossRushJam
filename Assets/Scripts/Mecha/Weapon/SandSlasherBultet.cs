@@ -33,12 +33,12 @@ public class SandSlasherBultet : Bullet
         {
             if(Time.time <= alredyDameged.MyTime + targetRenualInterval)
             {
-                alredyDameged.Damageable.TakeDamage(dmg);
+                alredyDameged.Damageable.TakeDamage(dmg, DamageType.MAGIC);
             }
         }
         else
         {
-            damageable.TakeDamage(dmg);
+            damageable.TakeDamage(dmg, DamageType.MAGIC);
             targets.Add(new HitedTargets(damageable));
         }
 
