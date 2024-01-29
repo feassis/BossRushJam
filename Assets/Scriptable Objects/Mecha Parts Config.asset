@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2643a3f53f02ed24baa716f519d323a7, type: 3}
+  m_Name: Mecha Parts Config
+  m_EditorClassIdentifier: 
+  torsoOptions:
+  - Type: 0
+    BodyPart: {fileID: 3741349642904719271, guid: dc301b476bf521d42af823294c287fad,
+      type: 3}
+  - Type: 1
+    BodyPart: {fileID: 7764392744290735245, guid: 9f2babcbc76828b4a8c0abea746d6aea,
+      type: 3}
+  - Type: 2
+    BodyPart: {fileID: 518577978393160815, guid: cf4a2d221e86d674ebe0fbc20153bdea,
+      type: 3}
+  armOptions:
+  - Type: 0
+    ArmPart: {fileID: 77793273993718283, guid: 4d723e387a946d3458c643c7dd1d5086, type: 3}
+  - Type: 1
+    ArmPart: {fileID: 77793273993718283, guid: 30b614f57b92fe84dace102406d06c84, type: 3}
+  - Type: 2
+    ArmPart: {fileID: 5718653963107654637, guid: 31f8f36a9cdb56747a554a1bf2fd5902,
+      type: 3}
+  - Type: 3
+    ArmPart: {fileID: 4803693860086551493, guid: ae41b8552d84716438ebf56d4f0804ac,
+      type: 3}
+  - Type: 4
+    ArmPart: {fileID: 9064934300366188529, guid: db6b653ff47b1744c922642e9abbf1b2,
+      type: 3}
+  - Type: 5
+    ArmPart: {fileID: 77793273993718283, guid: 8e261f5bf6bd4b04ea90cf3e8e6c13e7, type: 3}
+  - Type: 6
+    ArmPart: {fileID: 77793273993718283, guid: d2d4cf5cbc62569469717402b16316fe, type: 3}
+  - Type: 7
+    ArmPart: {fileID: 1660623612055999486, guid: 475110e0e506d124281a00b3861aa700,
+      type: 3}
+  - Type: 8
+    ArmPart: {fileID: 4989557198531303700, guid: 067a254a2da1cdb43881673667775781,
+      type: 3}
+  - Type: 9
+    ArmPart: {fileID: 8514133288461211370, guid: 607f926d49b9603428466b9bba2b28b5,
+      type: 3}
+  - Type: 10
+    ArmPart: {fileID: 8037921016920115049, guid: 0a46019d41e8aea4ca5b26e8c5a87672,
+      type: 3}
+  legOptions:
+  - Type: 0
+    LegPart: {fileID: 4195123127108275411, guid: aa39d85cdc076e1409711800b7134ab0,
+      type: 3}
+  - Type: 1
+    LegPart: {fileID: 5691867501568812715, guid: ac7310b5502eb06408794c2dea8b5b89,
+      type: 3}
+  - Type: 2
+    LegPart: {fileID: 922239517205208322, guid: 2caeab2dc56b1c64689da654e9675b56,
+      type: 3}
