@@ -118,6 +118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6b5066dd580b674abd330775ab45ae0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partName: Turret Legs
+  icon: {fileID: 21300000, guid: b52130bb79a23344aa8c335cecb91eb0, type: 3}
   statList: []
   abilityManaCost: 35
   dashSpeedMultiplier: 3

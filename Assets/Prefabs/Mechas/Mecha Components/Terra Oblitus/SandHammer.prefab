@@ -866,6 +866,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a0222778d86ecbb429e76cba5fd05135, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partName: Sand Hammer
+  icon: {fileID: 21300000, guid: f004d321f2825c44d929e3d0f5844b8c, type: 3}
   statList:
   - Type: 2
     Amount: 5

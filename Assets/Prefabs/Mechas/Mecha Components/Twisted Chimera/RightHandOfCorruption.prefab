@@ -865,6 +865,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cda41662d60f3d242a3de2b502441e14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partName: Right Hand Of Curruption
+  icon: {fileID: 21300000, guid: 3e33bda025a5e1d4eae51ae3933d9954, type: 3}
   statList:
   - Type: 2
     Amount: 5
