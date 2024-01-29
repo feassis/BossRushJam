@@ -111,7 +111,7 @@ public class GrappleClaw : MonoBehaviour
         if (Vector3.Distance(returnPoint.position, transform.position) < 0.5)
         {
             grabedMecha.GetMechaStats().RemoveStatusEffect(StatusEffect.Rooted);
-            grabedMecha.GetMechaStats().GetHealth().TakeDamage(damage);
+            grabedMecha.GetMechaStats().GetHealth().TakeDamage(damage, DamageType.PHYSICAL);
             transform.position = returnPoint.position;
             transform.rotation = returnPoint.rotation;
             stats.RemoveStatusEffect(StatusEffect.GrabbingRooted);

@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class Health : MonoBehaviour, IDamageable
 {
@@ -64,6 +65,7 @@ public class Health : MonoBehaviour, IDamageable
 
     private float CalculateDamage(float damageTaken, DamageType damageType) //Responsible For Calculating Damage Player Takes From Enemies
     {
+        float calculatedDamage = 0;
         switch (damageType)
         {
             case DamageType.PHYSICAL:
@@ -73,10 +75,9 @@ public class Health : MonoBehaviour, IDamageable
 
             if (reducedPhysicalPercentage <= defenseValue)
             {
-                float healthAfterPhysical = currentHealth - damageTaken * 0.50f;
-                return healthAfterPhysical;
+                    calculatedDamage = damageTaken * 0.50f;
             }
-            goto case default;
+                break;
 
             case DamageType.MAGIC:
             AvailableStat wisdomStat = mechaStat.GetStat(Stat.WIS);
@@ -86,14 +87,13 @@ public class Health : MonoBehaviour, IDamageable
             if (reducedMagicPercentage <= wisdomValue)
             {
                 // Display Reduced Damage
-                float healthAfterMagic = currentHealth - damageTaken * 0.50f;
-                return healthAfterMagic;
+                calculatedDamage = damageTaken * 0.50f;
             }
-            goto case default;
+                break;
 
             default:
-            float healthAfterDamage = currentHealth -= damageTaken;
-            return healthAfterDamage;
+                calculatedDamage = damageTaken;
+                break;
         }
         
         if (mechaStat.HasStatus(StatusEffect.DamageReduction50))

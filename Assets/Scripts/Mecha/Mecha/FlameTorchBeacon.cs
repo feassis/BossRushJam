@@ -82,7 +82,7 @@ public class FlameTorchBeacon : MechaArmPart
         {
             foreach(var health in GetEnemiesInCone())
             {
-                health.TakeDamage(GetDamage());
+                health.TakeDamage(GetDamage(), DamageType.MAGIC);
             }
 
             tickTimer = tickSpeed;
