@@ -5270,7 +5270,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   partName: Flame Torch
   icon: {fileID: 21300000, guid: 210e6a7b28c57aa4e9408866e861895c, type: 3}
-  statList: []
+  statList:
+  - Type: 4
+    Amount: 2
   abilityManaCost: 25
   atkUsage: 0
   intUsage: 0.14

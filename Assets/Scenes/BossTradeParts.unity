@@ -796,6 +796,141 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 208953363}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &208953365 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 9040483988981047316, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+    type: 3}
+  m_PrefabInstance: {fileID: 208953363}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1001 &241486193
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1511670004}
+    m_Modifications:
+    - target: {fileID: 1369480646716637574, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1369480646716637574, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1369480646716637574, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1369480646716637574, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1369480646716637574, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1369480646716637574, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1369480646716637574, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 1369480646716637574, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 1369480646716637574, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1369480646716637574, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1369480646716637574, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1369480646716637574, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1369480646716637574, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1369480646716637574, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1369480646716637574, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1369480646716637574, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1369480646716637574, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1369480646716637574, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1369480646716637574, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1369480646716637574, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1969138588777272679, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: m_Name
+      value: BossMiddleArm
+      objectReference: {fileID: 0}
+    - target: {fileID: 7847834504164699612, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: type
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: fe4f86b6c7d2e164787a5f4810f4c13f, type: 3}
 --- !u!1 &392899013
 GameObject:
   m_ObjectHideFlags: 0
@@ -1583,7 +1718,27 @@ PrefabInstance:
     - target: {fileID: 1969138588777272679, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
         type: 3}
       propertyPath: m_Name
-      value: MechaPartSlot (1)
+      value: Player Left Arm
+      objectReference: {fileID: 0}
+    - target: {fileID: 7847834504164699612, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: arm
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7847834504164699612, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: leg
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7847834504164699612, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: type
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7847834504164699612, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: torso
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1596,6 +1751,24 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 664588074}
   m_PrefabAsset: {fileID: 0}
+--- !u!224 &851706423 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 1369480646716637574, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+    type: 3}
+  m_PrefabInstance: {fileID: 241486193}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &851706424 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7847834504164699612, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+    type: 3}
+  m_PrefabInstance: {fileID: 241486193}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b9a5faf0b8346409158f3d36edc80b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &879951543
 GameObject:
   m_ObjectHideFlags: 0
@@ -2317,7 +2490,12 @@ PrefabInstance:
     - target: {fileID: 1969138588777272679, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
         type: 3}
       propertyPath: m_Name
-      value: MechaPartSlot (6)
+      value: BossRightArm
+      objectReference: {fileID: 0}
+    - target: {fileID: 7847834504164699612, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: type
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2330,6 +2508,30 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1261968136}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1261968138 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7847834504164699612, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1261968136}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b9a5faf0b8346409158f3d36edc80b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1367794111 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7847834504164699612, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+    type: 3}
+  m_PrefabInstance: {fileID: 664588074}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b9a5faf0b8346409158f3d36edc80b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1375156978
 GameObject:
   m_ObjectHideFlags: 0
@@ -2473,6 +2675,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2135804289805473199}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1417005613 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7847834504164699612, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2135804289805473199}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b9a5faf0b8346409158f3d36edc80b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1418271878
 GameObject:
   m_ObjectHideFlags: 0
@@ -2639,6 +2853,7 @@ RectTransform:
   m_Children:
   - {fileID: 1975149971}
   - {fileID: 1516368438}
+  - {fileID: 851706423}
   - {fileID: 1571853459}
   - {fileID: 1261968137}
   m_Father: {fileID: 2127073502}
@@ -2772,7 +2987,7 @@ PrefabInstance:
     - target: {fileID: 1369480646716637574, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -152
+      value: -182.76
       objectReference: {fileID: 0}
     - target: {fileID: 1369480646716637574, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
         type: 3}
@@ -2797,7 +3012,12 @@ PrefabInstance:
     - target: {fileID: 1969138588777272679, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
         type: 3}
       propertyPath: m_Name
-      value: MechaPartSlot (4)
+      value: BossLeftArm
+      objectReference: {fileID: 0}
+    - target: {fileID: 7847834504164699612, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: type
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2810,6 +3030,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1516368437}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1516368439 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7847834504164699612, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1516368437}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b9a5faf0b8346409158f3d36edc80b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1552036855
 GameObject:
   m_ObjectHideFlags: 0
@@ -3058,7 +3290,12 @@ PrefabInstance:
     - target: {fileID: 1969138588777272679, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
         type: 3}
       propertyPath: m_Name
-      value: MechaPartSlot (5)
+      value: BossTorso
+      objectReference: {fileID: 0}
+    - target: {fileID: 7847834504164699612, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: type
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3071,6 +3308,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1571853458}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1571853460 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7847834504164699612, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1571853458}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b9a5faf0b8346409158f3d36edc80b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1695533601
 GameObject:
   m_ObjectHideFlags: 0
@@ -3350,6 +3599,7 @@ GameObject:
   - component: {fileID: 1812101368}
   - component: {fileID: 1812101367}
   - component: {fileID: 1812101366}
+  - component: {fileID: 1812101369}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3431,6 +3681,50 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1812101369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1812101365}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a79441f348de89743a2939f4d699eac1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_RenderShadows: 1
+  m_RequiresDepthTextureOption: 2
+  m_RequiresOpaqueTextureOption: 2
+  m_CameraType: 0
+  m_Cameras: []
+  m_RendererIndex: -1
+  m_VolumeLayerMask:
+    serializedVersion: 2
+    m_Bits: 1
+  m_VolumeTrigger: {fileID: 0}
+  m_VolumeFrameworkUpdateModeOption: 2
+  m_RenderPostProcessing: 0
+  m_Antialiasing: 0
+  m_AntialiasingQuality: 2
+  m_StopNaN: 0
+  m_Dithering: 0
+  m_ClearDepth: 1
+  m_AllowXRRendering: 1
+  m_AllowHDROutput: 1
+  m_UseScreenCoordOverride: 0
+  m_ScreenSizeOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_ScreenCoordScaleBias: {x: 0, y: 0, z: 0, w: 0}
+  m_RequiresDepthTexture: 0
+  m_RequiresColorTexture: 0
+  m_Version: 2
+  m_TaaSettings:
+    quality: 3
+    frameInfluence: 0.1
+    jitterScale: 1
+    mipBias: 0
+    varianceClampScale: 0.9
+    contrastAdaptiveSharpening: 0
 --- !u!1 &1854000703
 GameObject:
   m_ObjectHideFlags: 0
@@ -3758,7 +4052,27 @@ PrefabInstance:
     - target: {fileID: 1969138588777272679, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
         type: 3}
       propertyPath: m_Name
-      value: MechaPartSlot (3)
+      value: Player Legs
+      objectReference: {fileID: 0}
+    - target: {fileID: 7847834504164699612, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: arm
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7847834504164699612, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: leg
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7847834504164699612, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: type
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 7847834504164699612, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: torso
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3771,6 +4085,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1924755894}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1924755896 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7847834504164699612, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1924755894}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b9a5faf0b8346409158f3d36edc80b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1975149970
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3882,7 +4208,12 @@ PrefabInstance:
     - target: {fileID: 1969138588777272679, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
         type: 3}
       propertyPath: m_Name
-      value: MechaPartSlot (3)
+      value: BossLegs
+      objectReference: {fileID: 0}
+    - target: {fileID: 7847834504164699612, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: type
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -3895,6 +4226,93 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1975149970}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1975149972 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7847834504164699612, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+    type: 3}
+  m_PrefabInstance: {fileID: 1975149970}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b9a5faf0b8346409158f3d36edc80b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &1985262469
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1985262470}
+  - component: {fileID: 1985262472}
+  - component: {fileID: 1985262471}
+  m_Layer: 5
+  m_Name: SelectedPart;
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1985262470
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985262469}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2127073502}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -305}
+  m_SizeDelta: {x: 128, y: 128}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1985262471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985262469}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 21300000, guid: 701e7ed4dde1bf949b30e33741547ac9, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1985262472
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1985262469}
+  m_CullTransparentMesh: 1
 --- !u!1001 &2119290998
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4006,7 +4424,27 @@ PrefabInstance:
     - target: {fileID: 1969138588777272679, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
         type: 3}
       propertyPath: m_Name
-      value: MechaPartSlot (2)
+      value: Player Right Arme
+      objectReference: {fileID: 0}
+    - target: {fileID: 7847834504164699612, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: arm
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7847834504164699612, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: leg
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7847834504164699612, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: type
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7847834504164699612, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: torso
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4019,6 +4457,18 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2119290998}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &2119291000 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7847834504164699612, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+    type: 3}
+  m_PrefabInstance: {fileID: 2119290998}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98b9a5faf0b8346409158f3d36edc80b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2127073498
 GameObject:
   m_ObjectHideFlags: 0
@@ -4031,6 +4481,7 @@ GameObject:
   - component: {fileID: 2127073501}
   - component: {fileID: 2127073500}
   - component: {fileID: 2127073499}
+  - component: {fileID: 2127073503}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -4117,6 +4568,7 @@ RectTransform:
   - {fileID: 1854000704}
   - {fileID: 1511670004}
   - {fileID: 135052730}
+  - {fileID: 1985262470}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4124,6 +4576,38 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &2127073503
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2127073498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 153f112f1f373bd4a8dde657cc2c85aa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerTorsoPart: {fileID: 1417005613}
+  playerLeftArmPart: {fileID: 1367794111}
+  playerRightArmPart: {fileID: 2119291000}
+  playerLegPart: {fileID: 1924755896}
+  bossTorsoPart: {fileID: 1571853460}
+  bossLeftArmPart: {fileID: 1516368439}
+  bossRightArmPart: {fileID: 1261968138}
+  bossMiddleArmPart: {fileID: 851706424}
+  bossLegPart: {fileID: 1975149972}
+  selectedImage: {fileID: 1985262471}
+  descriptionImage: {fileID: 208953365}
+  descriptionName: {fileID: 540670293}
+  hpText: {fileID: 635254293}
+  mpText: {fileID: 1776015310}
+  mpresText: {fileID: 64937993}
+  atkText: {fileID: 879951545}
+  defText: {fileID: 574901695}
+  intText: {fileID: 1081305551}
+  wisText: {fileID: 1695533603}
+  spdText: {fileID: 1418271880}
 --- !u!1001 &2135804289805473199
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4235,7 +4719,22 @@ PrefabInstance:
     - target: {fileID: 1969138588777272679, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
         type: 3}
       propertyPath: m_Name
-      value: MechaPartSlot
+      value: Player Torso
+      objectReference: {fileID: 0}
+    - target: {fileID: 7847834504164699612, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: arm
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7847834504164699612, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: leg
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7847834504164699612, guid: fe4f86b6c7d2e164787a5f4810f4c13f,
+        type: 3}
+      propertyPath: torso
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
