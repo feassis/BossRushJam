@@ -155,6 +155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dfdc6b02ed152df48b8db840c5611813, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partName: Energy Shield Torso
+  icon: {fileID: 21300000, guid: c0d66557e6e886446b2af17220906a63, type: 3}
   statList:
   - Type: 1
     Amount: 10

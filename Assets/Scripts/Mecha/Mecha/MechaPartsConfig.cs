@@ -49,6 +49,7 @@ public class MechaPartsConfig : ScriptableObject
 
 public enum MechaTorso
 {
+    None = -1,
     EnergyShield = 0,
     ChainedGhost = 1,
     CephaloTorso = 2,
@@ -56,6 +57,7 @@ public enum MechaTorso
 
 public enum MechaArms
 {
+    None = -1,
     RapidCaster = 0,
     ShieldDestroyer = 1,
     ChainGrappled = 2,
@@ -71,6 +73,7 @@ public enum MechaArms
 
 public enum MechaLegs
 {
+    None = -1,
     CoolDown = 0,
     OverHeat = 1,
     TurretMode = 2,

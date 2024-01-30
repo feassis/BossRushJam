@@ -118,6 +118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ad5c0fc0fff50e44a25dd54eca27867, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partName: Overheat Leg
+  icon: {fileID: 21300000, guid: 156c51bba7cc9d24496e86f11d08bbaf, type: 3}
   statList:
   - Type: 6
     Amount: 12
@@ -125,4 +127,5 @@ MonoBehaviour:
   dashSpeedMultiplier: 3
   dashDuration: 0
   overheatSpeedMultiplier: 2
+  overheatDuration: 20
   selfDamagePercentage: 0.05

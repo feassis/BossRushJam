@@ -155,6 +155,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f793d4a2ebecc71498bf0906ebef935f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partName: Chained Ghost Torso
+  icon: {fileID: 21300000, guid: 751a7b6d15a328547a14075f8adb0bb0, type: 3}
   statList:
   - Type: 5
     Amount: 3

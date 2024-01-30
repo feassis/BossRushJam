@@ -4,12 +4,16 @@ using UnityEngine;
 
 public class MechaPart : MonoBehaviour
 {
+    [SerializeField] private string partName;
+    [SerializeField] private Sprite icon;
     [SerializeField] private List<AvailableStat> statList = new List<AvailableStat>();
     [SerializeField] protected float abilityManaCost = 1;
 
     protected Rigidbody parent;
     protected MechaStats mechaStats;
 
+    public Sprite GetSprite() { return icon; }
+    public string GetName() => partName;
     public List<AvailableStat> GetPartStatus() => statList;
     public virtual void Setup(Rigidbody parent, MechaStats stats)
     {

@@ -118,6 +118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 48001257ffc4aa4438ba5d2ed4a597df, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partName: Cool Down Legs
+  icon: {fileID: 21300000, guid: cb0be92a1645a7c48a26aa4a8ebdb7d8, type: 3}
   statList:
   - Type: 6
     Amount: 5

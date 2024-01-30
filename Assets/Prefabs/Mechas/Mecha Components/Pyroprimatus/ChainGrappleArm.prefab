@@ -745,6 +745,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b3eb5c9b700f74aa8579056713302a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partName: Chain Grapple
+  icon: {fileID: 21300000, guid: e8433df827a81cb48bac4ebc18d1e25e, type: 3}
   statList:
   - Type: 2
     Amount: 2

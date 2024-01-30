@@ -361,6 +361,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9778d134e9f7a2342b53f4b478ba57a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  partName: Red Acid Cannon
+  icon: {fileID: 21300000, guid: 2e43f0691f0d7404eae8d01381da65a0, type: 3}
   statList:
   - Type: 2
     Amount: 200

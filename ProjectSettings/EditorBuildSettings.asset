@@ -17,4 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TestScene.unity
     guid: d0823afe73b0d5f4b92873061fe07d2d
+  - enabled: 1
+    path: Assets/Scenes/BossTradeParts.unity
+    guid: 569eadd1b91c3494091379c365c490f3
   m_configObjects: {}

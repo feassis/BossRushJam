@@ -30,7 +30,8 @@ public class MainMenu : MonoBehaviour
 
     private void ContinueGame()
     {
-        
+        PartExchangeMenu.OpenPartExchangeMenu(MechaTorso.ChainedGhost, new List<MechaArms> { MechaArms.ChainGrappled,
+        MechaArms.FlameTorchBeacon, MechaArms.PinkAcidLazer}, MechaLegs.OverHeat);
     }
 
     private void LevelSelect()
