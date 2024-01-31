@@ -9,12 +9,11 @@ public class GameManager : MonoBehaviour
     public static event GameStateHandler OnGamePaused; //Event For Pause
     public static event GameStateHandler OnGamePlay; //Event For Play
     public static event GameStateHandler OnGameOver; //Event For Game Over
+    public static event GameStateHandler OnLevelCompleted; //Event For Completed Level
 
-    private GameState currentGameState;
+    private GameState currentGameState; //Enum References
 
-    private static GameManager instance;
-
-    private float currentTime;
+    private static GameManager instance; //Singleton Instance
     
     private void Awake()
     {
