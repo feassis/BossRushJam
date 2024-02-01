@@ -3,6 +3,8 @@
 public class ArcBullet: MonoBehaviour
 {
     [SerializeField] private Rigidbody rb;
+    [SerializeField] private AudioClip shootingSound;
+    [SerializeField] private AudioSource audioSource;
 
     protected float dmg;
     protected GameObject owner;
@@ -12,5 +14,8 @@ public class ArcBullet: MonoBehaviour
         dmg = damage;
         rb.velocity = initialVelocity;
         this.owner = owner;
+
+        audioSource.clip = shootingSound;
+        audioSource.Play();
     }
 }

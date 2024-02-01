@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    [SerializeField] private AudioClip shootingSound;
+    [SerializeField] private AudioSource audioSource;
     protected float dmg;
     protected float speed;
     private Vector3 movementDirection = Vector3.zero;
@@ -17,6 +19,9 @@ public class Bullet : MonoBehaviour
         this.speed = speed;
         this.movementDirection = directon;
         this.owner = owner;
+
+        audioSource.clip = shootingSound;
+        audioSource.Play();
 
         StartCoroutine(Lifetime());
     }
