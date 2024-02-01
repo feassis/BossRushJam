@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    [SerializeField] private AudioClip shootingSound;
-    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioSource audioSourceShooting;
+    [SerializeField] private AudioSource audioSourceHited;
+    [SerializeField] private MeshRenderer mesh;
+    [SerializeField] private GameObject trail;
+
+    bool hitedSomething = false;
+
     protected float dmg;
     protected float speed;
     private Vector3 movementDirection = Vector3.zero;
@@ -20,8 +25,7 @@ public class Bullet : MonoBehaviour
         this.movementDirection = directon;
         this.owner = owner;
 
-        audioSource.clip = shootingSound;
-        audioSource.Play();
+        audioSourceShooting.Play();
 
         StartCoroutine(Lifetime());
     }
@@ -44,12 +48,34 @@ public class Bullet : MonoBehaviour
         {
             return;
         }
+
+        if (hitedSomething)
+        {
+            return;
+        }
+
+        if (other.gameObject.tag == "Obstacle" || other.gameObject.tag == "Floor")
+        {
+            StartCoroutine(HitedSomething());
+        }
+
         other.gameObject.TryGetComponent<IDamageable>(out IDamageable damageable);
         if (damageable != null)
         {
             ApplyBulletDamage(damageable, other.gameObject);
-            Destroy(gameObject);
+            StartCoroutine(HitedSomething());
         }
+    }
+
+    private IEnumerator HitedSomething()
+    {
+        hitedSomething = true;
+        audioSourceHited.Play();
+        mesh.enabled = false;
+        trail.gameObject.SetActive(false);
+
+        yield return new WaitForSeconds(1.5f);
+        Destroy(gameObject);
     }
 
     protected virtual void ApplyBulletDamage(IDamageable damageable, GameObject hitedObj)

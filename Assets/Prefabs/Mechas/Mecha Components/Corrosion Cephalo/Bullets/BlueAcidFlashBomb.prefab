@@ -158,6 +158,8 @@ MonoBehaviour:
   obstacleMask:
     serializedVersion: 2
     m_Bits: 64
+  audioSourceHited: {fileID: 5629566553844379665}
+  mesh: {fileID: 4264575491192189678}
 --- !u!114 &5929728169269193508
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -183,7 +185,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 06985cdb648453442927aa294380f48e, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
