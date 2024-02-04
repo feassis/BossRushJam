@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 using UnityEngine.Rendering;
 
 public class BlueAcidFlashBomb : ArcBullet
@@ -7,6 +8,10 @@ public class BlueAcidFlashBomb : ArcBullet
     [SerializeField] private float dmgTickPeriod;
     [SerializeField] private float duration;
     [SerializeField] private LayerMask obstacleMask;
+    [SerializeField] private AudioSource audioSourceHited;
+    [SerializeField] private MeshRenderer mesh;
+
+    bool hitedSomething = true;
 
     private void OnTriggerEnter(Collider other)
     {
@@ -21,8 +26,17 @@ public class BlueAcidFlashBomb : ArcBullet
             puddle.transform.position = raycastHit.point + new Vector3(0, 0.001f, 0);
             puddle.Setup(dmg, dmgTickPeriod, duration, owner);
 
-            Destroy(gameObject);
+            StartCoroutine(HitedSomething());
         }
     }
 
+    private IEnumerator HitedSomething()
+    {
+        hitedSomething = true;
+        audioSourceHited.Play();
+        mesh.enabled = false;
+
+        yield return new WaitForSeconds(2f);
+        Destroy(gameObject);
+    }
 }

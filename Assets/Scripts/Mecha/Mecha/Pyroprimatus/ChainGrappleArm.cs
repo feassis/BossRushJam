@@ -8,7 +8,8 @@ public class ChainGrappleArm : MechaArmPart
     [SerializeField] private float range = 10;
     [SerializeField] private float chainGrappleSpeed = 20;
     [SerializeField] private float grabDuration = 0.5f;
-
+    [SerializeField] private AudioClip shootingGrapple;
+    [SerializeField] private AudioSource audioSource;
 
     private void Awake()
     {
@@ -25,6 +26,8 @@ public class ChainGrappleArm : MechaArmPart
 
         SpendManaAndAct(() =>
         {
+            audioSource.clip = shootingGrapple;
+            audioSource.Play();
             claw.ShootClaw(clawBase, range, chainGrappleSpeed, 
                 mechaStats, mechaStats.gameObject.GetComponent<Mecha>(), 
                 grabDuration, GetDamage());
